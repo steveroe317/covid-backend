@@ -9,13 +9,11 @@ from collections import deque
 import json
 import json5
 
-
 from johns_hopkins_journal import JohnsHopkinsJournal
 from johns_hopkins_query import AdminArea, Region, RegionQuery, FilteredQuery
 from johns_hopkins_query import SheetOutput, CsvOutput, QueryReport
 from sheets_client import ColumnRange, WriteSheet
 from utils import collapse_data_sets
-
 
 # Throttle writes to Google Sheets to stay under writes per 100 seconds quota.
 _WRITE_SLEEP_SEC = 10
@@ -25,7 +23,6 @@ COVID_CSV_DIR = os.path.join(
     'COVID-19',
     'csse_covid_19_data',
     'csse_covid_19_daily_reports')
-
 
 def init_parser():
   parser = argparse.ArgumentParser(
@@ -61,11 +58,17 @@ def sum_region_data(areas, data_key, journal):
       data_set = collapse_data_sets(data_set, 
                                     journal.get_country_data(area.country(),
                                                              [data_key]))
-    else:
+    elif area.county() is None:
       data_set = collapse_data_sets(data_set,
                                     journal.get_state_data(area.state(),
                                                            area.country(),
                                                            [data_key]))
+    else:
+      data_set = collapse_data_sets(data_set,
+                                    journal.get_county_data(area.county(),
+                                                            area.state(),
+                                                            area.country(),
+                                                            [data_key]))
     #print(data_set)
   return data_set
 

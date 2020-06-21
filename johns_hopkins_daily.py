@@ -35,62 +35,6 @@ class JohnsHopkinsDaily:
     else:
       return []
 
-      
-  def sum(self, sum_key):
-    sum = 0
-
-    if not self.data_dicts:
-      return sum
-
-    for data_dict in self.data_dicts:
-      if sum_key in data_dict:
-        row_val = data_dict[sum_key]
-        sum += int(row_val) if row_val else 0
-
-    return sum
-
-
-  def sum_by_country(self, sum_key, country):
-    sum = 0
-
-    if not self.data_dicts:
-      return sum
-
-    for key in self.data_dicts[0].keys():
-      if 'Country' in key:
-        country_key = key
-
-    for data_dict in self.data_dicts:
-      if standard_country_name(data_dict[country_key]) == country:
-        if sum_key in data_dict:
-          row_val = data_dict[sum_key]
-          sum += int(row_val) if row_val else 0
-
-    return sum
-
-
-  def sum_by_state_country(self, sum_key, state, country):
-    sum = 0
-
-    if not self.data_dicts:
-      return sum
-
-    for key in self.data_dicts[0].keys():
-      if 'State' in key:
-        state_key = key
-      if 'Country' in key:
-        country_key = key
-
-    for data_dict in self.data_dicts:
-      if data_dict[country_key] == country:
-        if convert_us_location_to_state(data_dict[state_key]) == state:
-          if standard_country_name(data_dict[country_key]) == country:
-            if sum_key in data_dict:
-              row_val = data_dict[sum_key]
-              sum += int(row_val) if row_val else 0
-
-    return sum
-
 
   def countries(self):
     if not self.data_dicts:
@@ -125,3 +69,89 @@ class JohnsHopkinsDaily:
           states.add(data_dict[state_key])
 
     return states
+
+      
+  def sum(self, sum_key):
+    sum = 0
+
+    if not self.data_dicts:
+      return sum
+
+    for data_dict in self.data_dicts:
+      if sum_key in data_dict:
+        row_val = data_dict[sum_key]
+        sum += int(row_val) if row_val else 0
+
+    return sum
+
+
+  def sum_by_country(self, sum_key, country):
+    sum = 0
+
+    if not self.data_dicts:
+      return sum
+
+    for key in self.data_dicts[0].keys():
+      if 'Country' in key:
+        country_key = key
+
+    for data_dict in self.data_dicts:
+      if standard_country_name(data_dict[country_key]) == country:
+        if sum_key in data_dict:
+          row_val = data_dict[sum_key]
+          sum += int(row_val) if row_val else 0
+
+    return sum
+
+
+  def sum_by_country_state(self, sum_key, state, country):
+    sum = 0
+
+    if not self.data_dicts:
+      return sum
+
+    for key in self.data_dicts[0].keys():
+      if 'State' in key:
+        state_key = key
+      if 'Country' in key:
+        country_key = key
+
+    for data_dict in self.data_dicts:
+      if data_dict[country_key] == country:
+        if convert_us_location_to_state(data_dict[state_key]) == state:
+          if standard_country_name(data_dict[country_key]) == country:
+            if sum_key in data_dict:
+              row_val = data_dict[sum_key]
+              sum += int(row_val) if row_val else 0
+
+    return sum
+  
+  def sum_by_country_state_county(self, sum_key, county, state, country):
+    sum = 0
+
+    if not self.data_dicts:
+      return sum
+
+    admin2_key = None
+
+    for key in self.data_dicts[0].keys():
+      if 'State' in key:
+        state_key = key
+      if 'Country' in key:
+        country_key = key
+      if 'Admin2' in key:
+        admin2_key = key
+
+    if not admin2_key:
+      return 0
+
+    for data_dict in self.data_dicts:
+      if data_dict[country_key] == country:
+        if convert_us_location_to_state(data_dict[state_key]) == state:
+          if standard_country_name(data_dict[country_key]) == country:
+            if data_dict[admin2_key] == county:
+              if sum_key in data_dict:
+                row_val = data_dict[sum_key]
+                sum += int(row_val) if row_val else 0
+
+    return sum

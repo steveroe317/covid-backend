@@ -69,14 +69,13 @@ class JohnsHopkinsJournal:
     return state_labels
 
 
-  def get_state_data(self, state, country, data_keys):
+  def get_world_data(self, data_keys):
     data = {}
     for date in self.dailies.keys():
       daily = self.dailies[date]
       daily_data = {}
       for data_key in data_keys:
-        daily_data[data_key] = daily.sum_by_state_country(data_key, state, 
-                                                          country)
+        daily_data[data_key] = daily.sum(data_key)
       data[date] = daily_data
     return data
 
@@ -92,12 +91,25 @@ class JohnsHopkinsJournal:
     return data
 
 
-  def get_world_data(self, data_keys):
+  def get_state_data(self, state, country, data_keys):
     data = {}
     for date in self.dailies.keys():
       daily = self.dailies[date]
       daily_data = {}
       for data_key in data_keys:
-        daily_data[data_key] = daily.sum(data_key)
+        daily_data[data_key] = daily.sum_by_country_state(data_key, state, 
+                                                          country)
+      data[date] = daily_data
+    return data
+
+
+  def get_county_data(self, county, state, country, data_keys):
+    data = {}
+    for date in self.dailies.keys():
+      daily = self.dailies[date]
+      daily_data = {}
+      for data_key in data_keys:
+        daily_data[data_key] = daily.sum_by_country_state_county(
+            data_key, county, state, country)
       data[date] = daily_data
     return data

@@ -56,15 +56,11 @@ def init_parser():
 
   subparsers = parser.add_subparsers(help='sub-command help')
 
-  parser_state_data = subparsers.add_parser(
-      'state-data',
-      help='list csv data for a specific state')
-  parser_state_data.add_argument(
-      '--state',
-      default='WA',
-      metavar='STATE',
-      help='(WA, NY, ...')
-  parser_state_data.set_defaults(func=state_data)
+  parser_world_data = subparsers.add_parser(
+      'world-data',
+      help='list csv data for the whole world'
+    )
+  parser_world_data.set_defaults(func=world_data)
 
   parser_country_data = subparsers.add_parser(
       'country-data',
@@ -77,11 +73,30 @@ def init_parser():
       help='(US, Ghana, ...')
   parser_country_data.set_defaults(func=country_data)
 
-  parser_world_data = subparsers.add_parser(
-      'world-data',
-      help='list csv data for the whole world'
-    )
-  parser_world_data.set_defaults(func=world_data)
+  parser_state_data = subparsers.add_parser(
+      'state-data',
+      help='list csv data for a specific state')
+  parser_state_data.add_argument(
+      '--state',
+      default='WA',
+      metavar='STATE',
+      help='(WA, NY, ...')
+  parser_state_data.set_defaults(func=state_data)
+
+  parser_county_data = subparsers.add_parser(
+      'county-data',
+      help='list csv data for a specific county')
+  parser_county_data.add_argument(
+      '--state',
+      default='WA',
+      metavar='STATE',
+      help='(WA, NY, ...')
+  parser_county_data.add_argument(
+      '--county',
+      default='King',
+      metavar='COUNTY',
+      help='(King, Yakima, ...')
+  parser_county_data.set_defaults(func=county_data)
 
   parser_labelled_data = subparsers.add_parser(
     'labelled-data',
@@ -202,21 +217,21 @@ def states(args):
       print('warning: unknown state label "{}"'.format(label))
 
 
-def state_data(args):
+def world_data(args):
   resolve_args(args)
   journal = JohnsHopkinsJournal(args.covid_csv_dir)
 
   data_keys = ['Confirmed', 'Deaths']
-  state_data = journal.get_state_data(args.state, 'US', data_keys)
+  world_data = journal.get_world_data(data_keys)
   header_row = ['Date'] + data_keys
   rows = [header_row]
-  for date in sorted(state_data.keys()):
-    daily_data = [str(state_data[date][data_key]) for data_key in data_keys]
+  for date in sorted(world_data.keys()):
+    daily_data = [str(world_data[date][data_key]) for data_key in data_keys]
     data_row = [date] + daily_data
     rows.append(data_row)
 
   write_rows(args.sheet_id, args.sheet_range, rows)
-
+  
 
 def country_data(args):
   resolve_args(args)
@@ -234,21 +249,38 @@ def country_data(args):
   write_rows(args.sheet_id, args.sheet_range, rows)
 
 
-def world_data(args):
+def state_data(args):
   resolve_args(args)
   journal = JohnsHopkinsJournal(args.covid_csv_dir)
 
   data_keys = ['Confirmed', 'Deaths']
-  world_data = journal.get_world_data(data_keys)
+  state_data = journal.get_state_data(args.state, 'US', data_keys)
   header_row = ['Date'] + data_keys
   rows = [header_row]
-  for date in sorted(world_data.keys()):
-    daily_data = [str(world_data[date][data_key]) for data_key in data_keys]
+  for date in sorted(state_data.keys()):
+    daily_data = [str(state_data[date][data_key]) for data_key in data_keys]
     data_row = [date] + daily_data
     rows.append(data_row)
 
   write_rows(args.sheet_id, args.sheet_range, rows)
-  
+
+
+def county_data(args):
+  resolve_args(args)
+  journal = JohnsHopkinsJournal(args.covid_csv_dir)
+
+  data_keys = ['Confirmed', 'Deaths']
+  county_data = journal.get_county_data(args.county, args.state, 'US',
+                                        data_keys)
+  header_row = ['Date'] + data_keys
+  rows = [header_row]
+  for date in sorted(county_data.keys()):
+    daily_data = [str(county_data[date][data_key]) for data_key in data_keys]
+    data_row = [date] + daily_data
+    rows.append(data_row)
+
+  write_rows(args.sheet_id, args.sheet_range, rows)
+
 
 def labelled_data(args):
   resolve_args(args)
