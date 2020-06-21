@@ -12,10 +12,16 @@ from google.auth.transport.requests import Request
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
-_COLUMN_HEADERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
 _SPREADSHEET_ID = '1Rz9jxXhuT_qwkujlU35llzlcLyxj51fvlA9re4Wx22g'
 _RANGE_NAME = 'Source Data!A:D'
+
+_COLUMN_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+_COLUMN_HEADERS = []
+for letter0 in _COLUMN_LETTERS:
+    _COLUMN_HEADERS.append(letter0)
+for letter0 in _COLUMN_LETTERS:
+    for letter1 in _COLUMN_LETTERS:
+        _COLUMN_HEADERS.append(letter0 + letter1)
 
 
 def _Authorize():
