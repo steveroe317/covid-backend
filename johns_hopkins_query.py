@@ -138,6 +138,30 @@ class FilteredQuery:
             self.name, self.filter, self.source)
 
 
+class TaggedResultsMatrix:
+    """Specifies a query merge with tags extracted from query names."""
+
+    @classmethod
+    def create(cls, query_dict):
+        name = _get_required_value(query_dict, 'TaggedResultsMatrix', 'name')
+        tags_bundle = _get_required_value(query_dict, 'TaggedResultsMatrix',
+                                         'tags_bundle')
+        if 'queries' not in query_dict:
+            raise ValueError(
+                'TaggedResultsMatrix "%s" missing queries' % name)
+        queries = [text for text in query_dict['queries']]
+        return TaggedResultsMatrix(name, tags_bundle, queries)
+
+    def __init__(self, name, tags_bundle, queries):
+        self.name = name
+        self.tags_bundle = tags_bundle
+        self.queries = queries
+
+    def __str__(self):
+        return 'name: %s, tags_bundle: %s, queries: %s' % (
+            self.name, self.tags_bundle, self.queries)
+
+
 class SheetOutput:
     """Specifies a Google spreadsheet output range."""
 
@@ -195,27 +219,33 @@ class QueryReport:
             reports_dict, 'reports', 'region_queries', RegionQuery.create)
         filtered_queries = _get_optional_object_list(
             reports_dict, 'reports', 'filtered_queries', FilteredQuery.create)
+        tagged_results_matrices = _get_optional_object_list(
+            reports_dict, 'reports', 'merged_tag_queries',
+            TaggedResultsMatrix.create)
         sheet_outputs = _get_optional_object_list(
             reports_dict, 'reports', 'sheet_outputs', SheetOutput.create)
         csv_outputs = _get_optional_object_list(
             reports_dict, 'reports', 'csv_outputs', CsvOutput.create)
 
         return QueryReport(regions, reqion_queries, filtered_queries,
-                           sheet_outputs, csv_outputs)
+                           tagged_results_matrices, sheet_outputs, csv_outputs)
 
     def __init__(self, regions, reqion_queries, filtered_queries,
-                 sheet_outputs, csv_outputs):
+                 tagged_results_matrices, sheet_outputs, csv_outputs):
         self.regions = regions
         self.region_queries = reqion_queries
         self.filtered_queries = filtered_queries
+        self.tagged_results_matrices = tagged_results_matrices
         self.sheet_outputs = sheet_outputs
         self.csv_outputs = csv_outputs
 
     def __str__(self):
         return ('regions: %s, region_queries: %s, filtered_queries: %s'
-                'sheet_outputs: %s, csv_outputs: %s' % (
+                'merged_tag_queries: %s, sheet_outputs: %s, csv_outputs: %s' % (
                 [str(region) for region in self.regions],
                 [str(query) for query in self.region_queries],
                 [str(query) for query in self.filtered_queries],
+                [str(matrix) for matrix in self.tagged_results_matrices],
                 [str(sheet) for sheet in self.sheet_outputs],
                 [str(csv) for csv in self.csv_outputs]))
+                
