@@ -74,14 +74,13 @@ FILTERED_QUERY_TEMPLATE = """
         {{ "name": "{code} Deaths 7-Day", "filter": "7-day", "source": "{code} Deaths Daily" }},
 """[1:-1]
 
-SHEET_OUTPUT_HEADER_TEMPLATE = """
+REPORT_TABLES_HEADER_TEMPLATE = """
         {{
-            "spreadsheet_id": "1bKhzZE7BOmTZmksWRaTRuGfDSPQKbxmkBeyp5Ed9i1o",
-            "sheet_name": "Source Data",
+            "name": "WA Counties",
             "queries": [
 """[1:-1]
 
-SHEET_OUTPUT_BODY_TEMPLATE = """
+REPORT_TABLES_BODY_TEMPLATE = """
                 "{code} Confirmed",
                 "{code} Confirmed Daily",
                 "{code} Confirmed 7-Day",
@@ -90,8 +89,16 @@ SHEET_OUTPUT_BODY_TEMPLATE = """
                 "{code} Deaths 7-Day",
 """[1:-1]
 
-SHEET_OUTPUT_TRAILER_TEMPLATE = """
+REPORT_TABLES_TRAILER_TEMPLATE = """
            ],
+        }},
+"""[1:-1]
+
+SHEET_OUTPUT_TEMPLATE = """
+        {{
+            "spreadsheet_id": "1bKhzZE7BOmTZmksWRaTRuGfDSPQKbxmkBeyp5Ed9i1o",
+            "sheet_name": "Source Data",
+            "table": "WA Counties"
         }},
 """[1:-1]
 
@@ -115,11 +122,15 @@ def main():
     print(FILTERED_QUERY_TEMPLATE.format(code=code))
   print(SECTION_TRAILER_TEMPLATE)
 
-  print(SECTION_HEADER_TEMPLATE.format(section='sheet_outputs'))
-  print(SHEET_OUTPUT_HEADER_TEMPLATE.format())
+  print(SECTION_HEADER_TEMPLATE.format(section='report_tables'))
+  print(REPORT_TABLES_HEADER_TEMPLATE.format())
   for code in county_codes:
-      print(SHEET_OUTPUT_BODY_TEMPLATE.format(code=code))
-  print(SHEET_OUTPUT_TRAILER_TEMPLATE.format())
+      print(REPORT_TABLES_BODY_TEMPLATE.format(code=code))
+  print(REPORT_TABLES_TRAILER_TEMPLATE.format())
+  print(SECTION_TRAILER_TEMPLATE)
+
+  print(SECTION_HEADER_TEMPLATE.format(section='sheet_outputs'))
+  print(SHEET_OUTPUT_TEMPLATE.format())
   print(SECTION_TRAILER_TEMPLATE)
 
   print(FILE_TRAILER_TEMPLATE)
