@@ -138,6 +138,12 @@ def run_filtered_queries(filtered_queries, query_results):
         query.filter,  query_results[query.source])
 
 
+def make_report_tables(report_tables, query_results, tables):
+  for report_table in report_tables:
+    rows = make_results_matrix(report_table.queries, query_results)
+    tables[report_table.name] = rows
+
+
 def make_results_matrix(queries, query_results):
   dates = set()
   for query_name in queries:
@@ -152,27 +158,27 @@ def make_results_matrix(queries, query_results):
   return rows
 
 
-def write_csv_output(csv_output, query_results):
-  rows = make_results_matrix(csv_output.queries, query_results)
+def write_csv_output(csv_output, tables):
+  rows = tables[csv_output.table]
   with open(csv_output.filepath, 'w') as csv_file:
     for row in rows:
       csv_file.write(','.join(row) + '\n')
 
 
-def write_csv_outputs(csv_outputs, query_results):
+def write_csv_outputs(csv_outputs, tables):
   for csv_output in csv_outputs:
     write_csv_output(csv_output, query_results)
 
 
-def write_sheet_output(sheet_output, query_results):
-  rows = make_results_matrix(sheet_output.queries, query_results)
+def write_sheet_output(sheet_output, tables):
+  rows = tables[sheet_output.table]
   range = ColumnRange(sheet_output.sheet_name, rows)
   WriteSheet(sheet_output.spreadsheet_id, range, rows)
   
 
-def write_sheet_outputs(sheet_outputs, query_results):
+def write_sheet_outputs(sheet_outputs, tables):
   for sheet_output in sheet_outputs:
-    write_sheet_output(sheet_output, query_results)
+    write_sheet_output(sheet_output, tables)
     time.sleep(_WRITE_SLEEP_SEC)
 
 
@@ -194,9 +200,11 @@ def main():
   run_filtered_queries(b.filtered_queries, query_results)
   #print(query_results)
 
-  write_csv_outputs(b.csv_outputs, query_results)
+  tables = {}
+  make_report_tables(b.report_tables, query_results, tables)
 
-  write_sheet_outputs(b.sheet_outputs, query_results)
+  write_csv_outputs(b.csv_outputs, tables)
+  write_sheet_outputs(b.sheet_outputs, tables)
 
 if __name__ == '__main__':
   main()

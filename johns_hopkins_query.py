@@ -138,6 +138,26 @@ class FilteredQuery:
             self.name, self.filter, self.source)
 
 
+class ReportTable:
+    """Specifies a Google spreadsheet output range."""
+
+    @classmethod
+    def create(cls, output_dict):
+        name = _get_required_value(output_dict, 'ReportTable', 'name')
+        if 'queries' not in output_dict:
+            raise ValueError(
+                'ReportTable "%s" missing queries' % spreadsheet_id)
+        queries = [text for text in output_dict['queries']]
+        return ReportTable(name, queries)
+
+    def __init__(self, name, queries):
+        self.name = name
+        self.queries = queries
+
+    def __str__(self):
+        return 'name: %s, queries: %s' % (self.name, self.queries)
+
+
 class SheetOutput:
     """Specifies a Google spreadsheet output range."""
 
@@ -147,20 +167,17 @@ class SheetOutput:
                                              'spreadsheet_id')
         sheet_name = _get_required_value(output_dict, 'SheetOutput',
                                          'sheet_name')
-        if 'queries' not in output_dict:
-            raise ValueError(
-                'SheetOutput "%s" missing queries' % spreadsheet_id)
-        queries = [text for text in output_dict['queries']]
-        return SheetOutput(spreadsheet_id, sheet_name, queries)
+        table = _get_required_value(output_dict, 'SheetOutput', 'table')
+        return SheetOutput(spreadsheet_id, sheet_name, table)
 
-    def __init__(self, spreadsheet_id, sheet_name, queries):
+    def __init__(self, spreadsheet_id, sheet_name, table):
         self.spreadsheet_id = spreadsheet_id
         self.sheet_name = sheet_name
-        self.queries = queries
+        self.table = table
 
     def __str__(self):
-        return 'spreadsheet_id: %s, sheet_name: %s, queries: %s' % (
-            self.spreadsheet_id, self.sheet_name, self.queries)
+        return 'spreadsheet_id: %s, sheet_name: %s, table: %s' % (
+            self.spreadsheet_id, self.sheet_name, self.table)
 
 
 class CsvOutput:
@@ -168,20 +185,16 @@ class CsvOutput:
 
     @classmethod
     def create(cls, output_dict):
-        filepath = _get_required_value(output_dict, 'CsvOutput',
-                                             'filepath')
-        if 'queries' not in output_dict:
-            raise ValueError(
-                'CsvOutput "%s" missing queries' % filepath)
-        queries = [text for text in output_dict['queries']]
-        return CsvOutput(filepath, queries)
+        filepath = _get_required_value(output_dict, 'CsvOutput', 'filepath')
+        table = _get_required_value(output_dict, 'SheetOutput', 'table')
+        return CsvOutput(filepath, table)
 
-    def __init__(self, filepath, queries):
+    def __init__(self, filepath, table):
         self.filepath = filepath
-        self.queries = queries
+        self.table = table
 
     def __str__(self):
-        return 'filepath: %s, queries: %s' % (self.filepath, self.queries)
+        return 'filepath: %s, table: %s' % (self.filepath, self.table)
 
 
 class QueryReport:
@@ -195,19 +208,22 @@ class QueryReport:
             reports_dict, 'reports', 'region_queries', RegionQuery.create)
         filtered_queries = _get_optional_object_list(
             reports_dict, 'reports', 'filtered_queries', FilteredQuery.create)
+        report_tables = _get_optional_object_list(
+            reports_dict, 'reports', 'report_tables', ReportTable.create)
         sheet_outputs = _get_optional_object_list(
             reports_dict, 'reports', 'sheet_outputs', SheetOutput.create)
         csv_outputs = _get_optional_object_list(
             reports_dict, 'reports', 'csv_outputs', CsvOutput.create)
 
         return QueryReport(regions, reqion_queries, filtered_queries,
-                           sheet_outputs, csv_outputs)
+                           report_tables, sheet_outputs, csv_outputs)
 
     def __init__(self, regions, reqion_queries, filtered_queries,
-                 sheet_outputs, csv_outputs):
+                 report_tables, sheet_outputs, csv_outputs):
         self.regions = regions
         self.region_queries = reqion_queries
         self.filtered_queries = filtered_queries
+        self.report_tables = report_tables
         self.sheet_outputs = sheet_outputs
         self.csv_outputs = csv_outputs
 
@@ -217,5 +233,6 @@ class QueryReport:
                 [str(region) for region in self.regions],
                 [str(query) for query in self.region_queries],
                 [str(query) for query in self.filtered_queries],
+                [str(table) for table in self.report_tables],
                 [str(sheet) for sheet in self.sheet_outputs],
                 [str(csv) for csv in self.csv_outputs]))
