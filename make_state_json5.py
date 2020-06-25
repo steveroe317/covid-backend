@@ -146,11 +146,9 @@ NATIONAL_FILTERED_QUERIES = """
         },
 """[1:-1]
 
-SHEET_OUTPUT_TEMPLATE = """
+REPORT_TABLE_TEMPLATE = """
         {{
-            // {code}
-            "spreadsheet_id": "{sheet_id}",
-            "sheet_name": "Source Data",
+            "name": "{code}",
             "queries": [
                 "{code} Confirmed",
                 "{code} Confirmed Daily",
@@ -162,11 +160,9 @@ SHEET_OUTPUT_TEMPLATE = """
         }},
 """[1:-1]
 
-NATIONAL_SHEET_OUTPUTS = """
+NATIONAL_REPORT_TABLES = """
         {
-            // US
-            "spreadsheet_id": "1xmEkDRZUZQefsD9yll24Q_VyTYaRteIvplok6S8JRMg",
-            "sheet_name": "Source Data",
+            "name": "US",
             "queries": [
                 "US Confirmed",
                 "US Confirmed Daily",
@@ -177,9 +173,7 @@ NATIONAL_SHEET_OUTPUTS = """
             ],
         },
         {
-            // US without NY
-            "spreadsheet_id": "1-IC22hnPHnmueM1g99PZkuvP5bLtAm_0_1bYMgrKGSY",
-            "sheet_name": "Source Data",
+            "name": "US without NY",
             "queries": [
                 "US without NY Confirmed",
                 "US without NY Confirmed Daily",
@@ -188,6 +182,31 @@ NATIONAL_SHEET_OUTPUTS = """
                 "US without NY Deaths Daily",
                 "US without NY Deaths 7-Day",
             ],
+        },
+"""[1:-1]
+
+
+SHEET_OUTPUT_TEMPLATE = """
+        {{
+            // {code}
+            "spreadsheet_id": "{sheet_id}",
+            "sheet_name": "Source Data",
+            "table": "{code}",
+        }},
+"""[1:-1]
+
+NATIONAL_SHEET_OUTPUTS = """
+        {
+            // US
+            "spreadsheet_id": "1xmEkDRZUZQefsD9yll24Q_VyTYaRteIvplok6S8JRMg",
+            "sheet_name": "Source Data",
+            "table": "US",
+        },
+        {
+            // US without NY
+            "spreadsheet_id": "1-IC22hnPHnmueM1g99PZkuvP5bLtAm_0_1bYMgrKGSY",
+            "sheet_name": "Source Data",
+            "table": "US without NY",
         },
 """[1:-1]
 
@@ -213,6 +232,14 @@ def main():
   for code in state_codes:
     print(FILTERED_QUERY_TEMPLATE.format(code=code))
   print(NATIONAL_FILTERED_QUERIES)
+  print(SECTION_TRAILER_TEMPLATE)
+
+  print(SECTION_HEADER_TEMPLATE.format(section='report_tables'))
+  for code in state_codes:
+    if code in US_STATE_SHEETS and US_STATE_SHEETS[code]:
+      print(REPORT_TABLE_TEMPLATE.format(
+          code=code, sheet_id=US_STATE_SHEETS[code]))
+  print(NATIONAL_REPORT_TABLES)
   print(SECTION_TRAILER_TEMPLATE)
 
   print(SECTION_HEADER_TEMPLATE.format(section='sheet_outputs'))
