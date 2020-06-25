@@ -63,15 +63,15 @@ COUNTY_TEMPLATE = """
 """[1:-1]
 
 COUNTY_QUERY_TEMPLATE = """
-        {{ "name": "{code} Confirmed", "key": "Confirmed", "region": "{code}" }},
-        {{ "name": "{code} Deaths", "key": "Deaths", "region": "{code}", }},
+        {{ "name": "{code}:Confirmed", "key": "Confirmed", "region": "{code}" }},
+        {{ "name": "{code}:Deaths", "key": "Deaths", "region": "{code}", }},
 """[1:-1]
 
 FILTERED_QUERY_TEMPLATE = """
-        {{ "name": "{code} Confirmed Daily", "filter": "daily", "source": "{code} Confirmed" }},
-        {{ "name": "{code} Confirmed 7-Day", "filter": "7-day", "source": "{code} Confirmed Daily" }},
-        {{ "name": "{code} Deaths Daily",  "filter": "daily", "source": "{code} Deaths" }},
-        {{ "name": "{code} Deaths 7-Day", "filter": "7-day", "source": "{code} Deaths Daily" }},
+        {{ "name": "{code}:Confirmed:Daily", "filter": "daily", "source": "{code}:Confirmed" }},
+        {{ "name": "{code}:Confirmed:7-Day", "filter": "7-day", "source": "{code}:Confirmed:Daily" }},
+        {{ "name": "{code}:Deaths:Daily",  "filter": "daily", "source": "{code}:Deaths" }},
+        {{ "name": "{code}:Deaths:7-Day", "filter": "7-day", "source": "{code}:Deaths:Daily" }},
 """[1:-1]
 
 REPORT_TABLES_HEADER_TEMPLATE = """
@@ -81,12 +81,12 @@ REPORT_TABLES_HEADER_TEMPLATE = """
 """[1:-1]
 
 REPORT_TABLES_BODY_TEMPLATE = """
-                "{code} Confirmed",
-                "{code} Confirmed Daily",
-                "{code} Confirmed 7-Day",
-                "{code} Deaths",
-                "{code} Deaths Daily",
-                "{code} Deaths 7-Day",
+                "{code}:Confirmed",
+                "{code}:Confirmed:Daily",
+                "{code}:Confirmed:7-Day",
+                "{code}:Deaths",
+                "{code}:Deaths:Daily",
+                "{code}:Deaths:7-Day",
 """[1:-1]
 
 REPORT_TABLES_TRAILER_TEMPLATE = """
