@@ -139,14 +139,14 @@ class FilteredQuery:
 
 
 class ReportTable:
-    """Specifies a Google spreadsheet output range."""
+    """Specifies a query report."""
 
     @classmethod
     def create(cls, output_dict):
         name = _get_required_value(output_dict, 'ReportTable', 'name')
         if 'queries' not in output_dict:
             raise ValueError(
-                'ReportTable "%s" missing queries' % spreadsheet_id)
+                'ReportTable "%s" missing queries' % name)
         queries = [text for text in output_dict['queries']]
         return ReportTable(name, queries)
 
@@ -156,6 +156,30 @@ class ReportTable:
 
     def __str__(self):
         return 'name: %s, queries: %s' % (self.name, self.queries)
+
+
+class TaggedReportTable:
+    """Specifies a query report with tags extracted from query names."""
+
+    @classmethod
+    def create(cls, query_dict):
+        name = _get_required_value(query_dict, 'TaggedReportTable', 'name')
+        tags_bundle = _get_required_value(query_dict, 'TaggedReportTable',
+                                         'tags_bundle')
+        if 'queries' not in query_dict:
+            raise ValueError(
+                'TaggedReportTable "%s" missing queries' % name)
+        queries = [text for text in query_dict['queries']]
+        return TaggedReportTable(name, tags_bundle, queries)
+
+    def __init__(self, name, tags_bundle, queries):
+        self.name = name
+        self.tags_bundle = tags_bundle
+        self.queries = queries
+
+    def __str__(self):
+        return 'name: %s, tags_bundle: %s, queries: %s' % (
+            self.name, self.tags_bundle, self.queries)
 
 
 class SheetOutput:
@@ -210,29 +234,38 @@ class QueryReport:
             reports_dict, 'reports', 'filtered_queries', FilteredQuery.create)
         report_tables = _get_optional_object_list(
             reports_dict, 'reports', 'report_tables', ReportTable.create)
+        tagged_report_tables = _get_optional_object_list(
+            reports_dict, 'reports', 'tagged_report_tables',
+            TaggedReportTable.create)
         sheet_outputs = _get_optional_object_list(
             reports_dict, 'reports', 'sheet_outputs', SheetOutput.create)
         csv_outputs = _get_optional_object_list(
             reports_dict, 'reports', 'csv_outputs', CsvOutput.create)
 
         return QueryReport(regions, reqion_queries, filtered_queries,
-                           report_tables, sheet_outputs, csv_outputs)
+                           report_tables, tagged_report_tables, sheet_outputs,
+                           csv_outputs)
 
     def __init__(self, regions, reqion_queries, filtered_queries,
-                 report_tables, sheet_outputs, csv_outputs):
+                 report_tables, tagged_report_tables, sheet_outputs,
+                 csv_outputs):
         self.regions = regions
         self.region_queries = reqion_queries
         self.filtered_queries = filtered_queries
         self.report_tables = report_tables
+        self.tagged_report_tables = tagged_report_tables
         self.sheet_outputs = sheet_outputs
         self.csv_outputs = csv_outputs
 
     def __str__(self):
-        return ('regions: %s, region_queries: %s, filtered_queries: %s'
-                'sheet_outputs: %s, csv_outputs: %s' % (
+        return ('regions: %s, region_queries: %s, filtered_queries: %s '
+                'report_tables: %s, tagged_report_tables: %s, sheet_outputs: %s, '
+                'csv_outputs: %s' % (
                 [str(region) for region in self.regions],
                 [str(query) for query in self.region_queries],
                 [str(query) for query in self.filtered_queries],
                 [str(table) for table in self.report_tables],
+                [str(table) for table in self.tagged_report_tables],
                 [str(sheet) for sheet in self.sheet_outputs],
                 [str(csv) for csv in self.csv_outputs]))
+                
