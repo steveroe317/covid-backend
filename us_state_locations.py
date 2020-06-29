@@ -138,7 +138,7 @@ us_locations_to_state = {
 	'Arizona': 'AZ',
 	'Arkansas': 'AK',
 	'Ashland, NE': 'NE',
-	'Bennington County, VT': 'Vt',
+	'Bennington County, VT': 'VT',
 	'Bergen County, NJ': 'NJ',
 	'Berkeley, CA': 'CA',
 	'Berkshire County, MA': 'MA',
