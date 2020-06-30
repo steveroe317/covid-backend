@@ -12,6 +12,7 @@ import json5
 from johns_hopkins_journal import JohnsHopkinsJournal
 from johns_hopkins_query import AdminArea, Region, RegionQuery, FilteredQuery
 from johns_hopkins_query import SheetOutput, CsvOutput, QueryReport
+from results_tables import make_results_table, make_tagged_results_table
 from sheets_client import ColumnRange, WriteSheet
 from utils import collapse_data_sets
 
@@ -103,7 +104,10 @@ def run_daily_filter(source):
   prev_value = 0
   for source_key in sorted(source.keys()):
     value = source[source_key]
-    daily_result[source_key] = value - prev_value
+    if value and prev_value:
+      daily_result[source_key] = value - prev_value
+    else:
+      daily_result[source_key] = 0
     prev_value = value
   return daily_result
 
@@ -140,22 +144,15 @@ def run_filtered_queries(filtered_queries, query_results):
 
 def make_report_tables(report_tables, query_results, tables):
   for report_table in report_tables:
-    rows = make_results_matrix(report_table.queries, query_results)
+    rows = make_results_table(report_table.queries, query_results)
     tables[report_table.name] = rows
 
 
-def make_results_matrix(queries, query_results):
-  dates = set()
-  for query_name in queries:
-    dates |= set(query_results[query_name].keys())
-
-  header_row = ['Date'] + queries
-  rows = [header_row]
-  for date in sorted(dates):
-    data_row = [date] + [str(query_results[name][date]) for name in queries]
-    rows.append(data_row)
-
-  return rows
+def make_tagged_report_tables(tagged_report_tables, query_results, tables):
+  for report_table in tagged_report_tables:
+    tags = report_table.tags_bundle.split(':')
+    rows = make_tagged_results_table(tags, report_table.queries, query_results)
+    tables[report_table.name] = rows
 
 
 def write_csv_output(csv_output, tables):
@@ -167,7 +164,7 @@ def write_csv_output(csv_output, tables):
 
 def write_csv_outputs(csv_outputs, tables):
   for csv_output in csv_outputs:
-    write_csv_output(csv_output, query_results)
+    write_csv_output(csv_output, tables)
 
 
 def write_sheet_output(sheet_output, tables):
@@ -202,6 +199,7 @@ def main():
 
   tables = {}
   make_report_tables(b.report_tables, query_results, tables)
+  make_tagged_report_tables(b.tagged_report_tables, query_results, tables)
 
   write_csv_outputs(b.csv_outputs, tables)
   write_sheet_outputs(b.sheet_outputs, tables)

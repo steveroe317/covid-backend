@@ -68,25 +68,26 @@ COUNTY_QUERY_TEMPLATE = """
 """[1:-1]
 
 FILTERED_QUERY_TEMPLATE = """
-        {{ "name": "{code}:Confirmed:Daily", "filter": "daily", "source": "{code}:Confirmed" }},
-        {{ "name": "{code}:Confirmed:7-Day", "filter": "7-day", "source": "{code}:Confirmed:Daily" }},
-        {{ "name": "{code}:Deaths:Daily",  "filter": "daily", "source": "{code}:Deaths" }},
-        {{ "name": "{code}:Deaths:7-Day", "filter": "7-day", "source": "{code}:Deaths:Daily" }},
+        {{ "name": "{code}:Confirmed Daily", "filter": "daily", "source": "{code}:Confirmed" }},
+        {{ "name": "{code}:Confirmed 7-Day", "filter": "7-day", "source": "{code}:Confirmed Daily" }},
+        {{ "name": "{code}:Deaths Daily",  "filter": "daily", "source": "{code}:Deaths" }},
+        {{ "name": "{code}:Deaths 7-Day", "filter": "7-day", "source": "{code}:Deaths Daily" }},
 """[1:-1]
 
 REPORT_TABLES_HEADER_TEMPLATE = """
         {{
             "name": "WA Counties",
+            "tags_bundle": "County",
             "queries": [
 """[1:-1]
 
 REPORT_TABLES_BODY_TEMPLATE = """
                 "{code}:Confirmed",
-                "{code}:Confirmed:Daily",
-                "{code}:Confirmed:7-Day",
+                "{code}:Confirmed Daily",
+                "{code}:Confirmed 7-Day",
                 "{code}:Deaths",
-                "{code}:Deaths:Daily",
-                "{code}:Deaths:7-Day",
+                "{code}:Deaths Daily",
+                "{code}:Deaths 7-Day",
 """[1:-1]
 
 REPORT_TABLES_TRAILER_TEMPLATE = """
@@ -122,7 +123,7 @@ def main():
     print(FILTERED_QUERY_TEMPLATE.format(code=code))
   print(SECTION_TRAILER_TEMPLATE)
 
-  print(SECTION_HEADER_TEMPLATE.format(section='report_tables'))
+  print(SECTION_HEADER_TEMPLATE.format(section='tagged_report_tables'))
   print(REPORT_TABLES_HEADER_TEMPLATE.format())
   for code in county_codes:
       print(REPORT_TABLES_BODY_TEMPLATE.format(code=code))
