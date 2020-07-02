@@ -103,38 +103,40 @@ SHEET_OUTPUT_TEMPLATE = """
         }},
 """[1:-1]
 
+
 def main():
-  county_codes = sorted(WA_COUNTIES)
+    county_codes = sorted(WA_COUNTIES)
 
-  print(FILE_HEADER_TEMPLATE)
+    print(FILE_HEADER_TEMPLATE)
 
-  print(SECTION_HEADER_TEMPLATE.format(section='regions'))
-  for code in county_codes:
-    print(COUNTY_TEMPLATE.format(code=code))
-  print(SECTION_TRAILER_TEMPLATE)
+    print(SECTION_HEADER_TEMPLATE.format(section='regions'))
+    for code in county_codes:
+        print(COUNTY_TEMPLATE.format(code=code))
+    print(SECTION_TRAILER_TEMPLATE)
 
-  print(SECTION_HEADER_TEMPLATE.format(section='region_queries'))
-  for code in county_codes:
-    print(COUNTY_QUERY_TEMPLATE.format(code=code))
-  print(SECTION_TRAILER_TEMPLATE)
+    print(SECTION_HEADER_TEMPLATE.format(section='region_queries'))
+    for code in county_codes:
+        print(COUNTY_QUERY_TEMPLATE.format(code=code))
+    print(SECTION_TRAILER_TEMPLATE)
 
-  print(SECTION_HEADER_TEMPLATE.format(section='filtered_queries'))
-  for code in county_codes:
-    print(FILTERED_QUERY_TEMPLATE.format(code=code))
-  print(SECTION_TRAILER_TEMPLATE)
+    print(SECTION_HEADER_TEMPLATE.format(section='filtered_queries'))
+    for code in county_codes:
+        print(FILTERED_QUERY_TEMPLATE.format(code=code))
+    print(SECTION_TRAILER_TEMPLATE)
 
-  print(SECTION_HEADER_TEMPLATE.format(section='tagged_report_tables'))
-  print(REPORT_TABLES_HEADER_TEMPLATE.format())
-  for code in county_codes:
-      print(REPORT_TABLES_BODY_TEMPLATE.format(code=code))
-  print(REPORT_TABLES_TRAILER_TEMPLATE.format())
-  print(SECTION_TRAILER_TEMPLATE)
+    print(SECTION_HEADER_TEMPLATE.format(section='tagged_report_tables'))
+    print(REPORT_TABLES_HEADER_TEMPLATE.format())
+    for code in county_codes:
+        print(REPORT_TABLES_BODY_TEMPLATE.format(code=code))
+    print(REPORT_TABLES_TRAILER_TEMPLATE.format())
+    print(SECTION_TRAILER_TEMPLATE)
 
-  print(SECTION_HEADER_TEMPLATE.format(section='sheet_outputs'))
-  print(SHEET_OUTPUT_TEMPLATE.format())
-  print(SECTION_TRAILER_TEMPLATE)
+    print(SECTION_HEADER_TEMPLATE.format(section='sheet_outputs'))
+    print(SHEET_OUTPUT_TEMPLATE.format())
+    print(SECTION_TRAILER_TEMPLATE)
 
-  print(FILE_TRAILER_TEMPLATE)
+    print(FILE_TRAILER_TEMPLATE)
+
 
 if __name__ == '__main__':
-  main()
+    main()

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
+
 def print_csv(rows):
-  for row in rows:
-    print(','.join(row))
+    for row in rows:
+        print(','.join(row))
 
 
 def collapse_data_sets(collapsed_data_set, full_data_set):

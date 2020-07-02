@@ -37,6 +37,7 @@ def _get_optional_object_list(source_dict, source_name, key, create_func):
 AdminAreaTuple = collections.namedtuple('AdminAreaTuple',
                                         ['admin0', 'admin1', 'admin2'])
 
+
 class AdminArea(AdminAreaTuple):
     """Specifies a administrative area from the Johns Hopkins dataset."""
 
@@ -83,7 +84,8 @@ class Region:
             raise ValueError('Region "%s" missing include' % name)
         include = [AdminArea.create(text) for text in region_dict['include']]
         if 'exclude' in region_dict:
-            exclude = [AdminArea.create(text) for text in region_dict['exclude']]
+            exclude = [AdminArea.create(text)
+                       for text in region_dict['exclude']]
         else:
             exclude = []
         return Region(name, include, exclude)
@@ -165,7 +167,7 @@ class TaggedReportTable:
     def create(cls, query_dict):
         name = _get_required_value(query_dict, 'TaggedReportTable', 'name')
         tags_bundle = _get_required_value(query_dict, 'TaggedReportTable',
-                                         'tags_bundle')
+                                          'tags_bundle')
         if 'queries' not in query_dict:
             raise ValueError(
                 'TaggedReportTable "%s" missing queries' % name)
@@ -261,11 +263,10 @@ class QueryReport:
         return ('regions: %s, region_queries: %s, filtered_queries: %s '
                 'report_tables: %s, tagged_report_tables: %s, sheet_outputs: %s, '
                 'csv_outputs: %s' % (
-                [str(region) for region in self.regions],
-                [str(query) for query in self.region_queries],
-                [str(query) for query in self.filtered_queries],
-                [str(table) for table in self.report_tables],
-                [str(table) for table in self.tagged_report_tables],
-                [str(sheet) for sheet in self.sheet_outputs],
-                [str(csv) for csv in self.csv_outputs]))
-                
+                    [str(region) for region in self.regions],
+                    [str(query) for query in self.region_queries],
+                    [str(query) for query in self.filtered_queries],
+                    [str(table) for table in self.report_tables],
+                    [str(table) for table in self.tagged_report_tables],
+                    [str(sheet) for sheet in self.sheet_outputs],
+                    [str(csv) for csv in self.csv_outputs]))

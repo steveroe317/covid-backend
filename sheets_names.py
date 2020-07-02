@@ -14,7 +14,7 @@ SheetInfo = {
         'states_group_1!A:O'
     ),
     'usa': SheetRange(
-        '1Rz9jxXhuT_qwkujlU35llzlcLyxj51fvlA9re4Wx22g', 
+        '1Rz9jxXhuT_qwkujlU35llzlcLyxj51fvlA9re4Wx22g',
         'Source Data!A:D'
     ),
 }

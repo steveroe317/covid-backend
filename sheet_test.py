@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 
-import pickle
 import os.path
-
+import pickle
 from pprint import pprint
 
-from googleapiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -15,14 +14,15 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 SPREADSHEET_ID = '1Rz9jxXhuT_qwkujlU35llzlcLyxj51fvlA9re4Wx22g'
 SHEET_NAME = 'Test'
 
+
 def main():
     creds = None
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
     if os.path.exists('token.pickle'):
-            with open('token.pickle', 'rb') as token:
-                creds = pickle.load(token)
+        with open('token.pickle', 'rb') as token:
+            creds = pickle.load(token)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
@@ -57,6 +57,5 @@ def main():
     pprint(response)
 
 
-
 if __name__ == '__main__':
-  main()
+    main()

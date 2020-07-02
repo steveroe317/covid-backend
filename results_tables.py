@@ -16,6 +16,8 @@ Args:
 
 Returns a results table with a header row and data rows.
 """
+
+
 def make_results_table(queries, query_results):
 
     dates = set()
@@ -49,6 +51,8 @@ Args:
 
 Returns a results table with a header row and data rows.
 """
+
+
 def make_tagged_results_table(tags, queries, query_results):
 
     dates = set()
