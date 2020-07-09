@@ -4,6 +4,7 @@ import csv
 
 from countries import standard_country_name
 from us_state_locations import (convert_us_location_to_state,
+                                us_state_names_to_state,
                                 us_states_to_state_names)
 
 
@@ -110,12 +111,11 @@ class JohnsHopkinsDaily:
                 country_key = key
 
         for data_dict in self.data_dicts:
-            if data_dict[country_key] == country:
-                if convert_us_location_to_state(data_dict[state_key]) == state:
-                    if standard_country_name(data_dict[country_key]) == country:
-                        if sum_key in data_dict:
-                            row_val = data_dict[sum_key]
-                            sum += int(row_val) if row_val else 0
+            if standard_country_name(data_dict[country_key]) == country:
+                if _match_state(data_dict[state_key], state):
+                    if sum_key in data_dict:
+                        row_val = data_dict[sum_key]
+                        sum += int(row_val) if row_val else 0
 
         return sum
 
@@ -140,7 +140,7 @@ class JohnsHopkinsDaily:
 
         for data_dict in self.data_dicts:
             if data_dict[country_key] == country:
-                if convert_us_location_to_state(data_dict[state_key]) == state:
+                if _match_state(data_dict[state_key], state):
                     if standard_country_name(data_dict[country_key]) == country:
                         if data_dict[admin2_key] == county:
                             if sum_key in data_dict:
@@ -148,3 +148,28 @@ class JohnsHopkinsDaily:
                                 sum += int(row_val) if row_val else 0
 
         return sum
+
+
+def _match_state(state_text, state_label):
+    """ Check if Johns Hopkins state key text matches state name or USPS code.
+
+    The state key text has different formats for different daily data sets.
+
+    For example, Washington State might be "Seattle, WA" or "Washington".
+
+    Args:
+        state_text: Johns Hopkins state key text.
+        state_label: State name or USPS code.
+
+    Returns True if there is a state match, or False if not.
+    """
+
+    state_code = convert_us_location_to_state(state_text)
+    if state_code == state_label:
+        return True
+    if state_code in us_states_to_state_names:
+        if us_states_to_state_names[state_code] == state_label:
+            return True
+    if state_text == state_label:
+        return True
+    return False
