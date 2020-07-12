@@ -40,6 +40,11 @@ def init_parser():
         metavar='QUERY.JSON5',
         help='json5 format query'
     )
+    parser.add_argument(
+        '--verbose', '-v',
+        action='count',
+        default=0
+    )
 
     return parser
 
@@ -183,27 +188,25 @@ def write_sheet_outputs(sheet_outputs, tables):
 def main():
     parser = init_parser()
     args = parser.parse_args()
-    # print(args.query)
-    fp = open(args.query, 'r')
-    a = json5.load(fp)
-    # print(a)
 
-    b = QueryReport.create(a)
-    # print(b)
+    query_file = open(args.query, 'r')
+    query_spec = json5.load(query_file)
+
+    query_report = QueryReport.create(query_spec)
 
     journal = JohnsHopkinsJournal(args.covid_csv_dir)
-    query_results = run_region_queries(b.region_queries, b.regions, journal)
-    # print(query_results)
+    query_results = run_region_queries(query_report.region_queries,
+                                       query_report.regions, journal)
 
-    run_filtered_queries(b.filtered_queries, query_results)
-    # print(query_results)
+    run_filtered_queries(query_report.filtered_queries, query_results)
 
     tables = {}
-    make_report_tables(b.report_tables, query_results, tables)
-    make_tagged_report_tables(b.tagged_report_tables, query_results, tables)
+    make_report_tables(query_report.report_tables, query_results, tables)
+    make_tagged_report_tables(query_report.tagged_report_tables, query_results,
+                              tables)
 
-    write_csv_outputs(b.csv_outputs, tables)
-    write_sheet_outputs(b.sheet_outputs, tables)
+    write_csv_outputs(query_report.csv_outputs, tables)
+    write_sheet_outputs(query_report.sheet_outputs, tables)
 
 
 if __name__ == '__main__':
