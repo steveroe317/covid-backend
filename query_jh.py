@@ -161,27 +161,31 @@ def make_tagged_report_tables(tagged_report_tables, query_results, tables):
         tables[report_table.name] = rows
 
 
-def write_csv_output(csv_output, tables):
+def write_csv_output(csv_output, tables, verbose):
+    if verbose:
+        print(csv_output.table)
     rows = tables[csv_output.table]
     with open(csv_output.filepath, 'w') as csv_file:
         for row in rows:
             csv_file.write(','.join(row) + '\n')
 
 
-def write_csv_outputs(csv_outputs, tables):
+def write_csv_outputs(csv_outputs, tables, verbose):
     for csv_output in csv_outputs:
-        write_csv_output(csv_output, tables)
+        write_csv_output(csv_output, tables, verbose)
 
 
-def write_sheet_output(sheet_output, tables):
+def write_sheet_output(sheet_output, tables, verbose):
+    if verbose:
+        print(sheet_output.table)
     rows = tables[sheet_output.table]
     range = ColumnRange(sheet_output.sheet_name, rows)
     WriteSheet(sheet_output.spreadsheet_id, range, rows)
 
 
-def write_sheet_outputs(sheet_outputs, tables):
+def write_sheet_outputs(sheet_outputs, tables, verbose):
     for sheet_output in sheet_outputs:
-        write_sheet_output(sheet_output, tables)
+        write_sheet_output(sheet_output, tables, verbose)
         time.sleep(_WRITE_SLEEP_SEC)
 
 
@@ -205,8 +209,8 @@ def main():
     make_tagged_report_tables(query_report.tagged_report_tables, query_results,
                               tables)
 
-    write_csv_outputs(query_report.csv_outputs, tables)
-    write_sheet_outputs(query_report.sheet_outputs, tables)
+    write_csv_outputs(query_report.csv_outputs, tables, args.verbose)
+    write_sheet_outputs(query_report.sheet_outputs, tables, args.verbose)
 
 
 if __name__ == '__main__':
