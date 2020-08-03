@@ -45,10 +45,18 @@ class AdminArea(AdminAreaTuple):
     def create(cls, text):
         if not isinstance(text, str):
             raise TypeError('AdminArea.create - text arg is not a string')
+
+        # Extract admin area text fields.
         fields = text.split(':')
         country = fields[0] if len(fields) > 0 else None
         state = fields[1] if len(fields) > 1 else None
         county = fields[2] if len(fields) > 2 else None
+
+        # Convert empty strings to None
+        country = country if country else None
+        state = state if state else None
+        county = county if county else None
+
         return AdminArea(country, state, county)
 
     def __new__(cls, country='', state='', county=''):

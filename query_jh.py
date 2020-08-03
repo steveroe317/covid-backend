@@ -59,8 +59,11 @@ def find_region(region_name, regions):
 def sum_region_data(areas, data_key, journal):
     data_set = {}
     for area in areas:
-        #print('AREA: ' + str(area))
-        if area.state() is None:
+        # print('AREA: ' + str(area))
+        if area.country() is None:
+            data_set = collapse_data_sets(data_set,
+                                          journal.get_world_data([data_key]))
+        elif area.state() is None:
             data_set = collapse_data_sets(data_set,
                                           journal.get_country_data(area.country(),
                                                                    [data_key]))
