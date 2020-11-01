@@ -112,7 +112,7 @@ def run_daily_filter(source):
     prev_value = 0
     for source_key in sorted(source.keys()):
         value = source[source_key]
-        if value and prev_value:
+        if value and prev_value and value >= prev_value:
             daily_result[source_key] = value - prev_value
         else:
             daily_result[source_key] = 0
