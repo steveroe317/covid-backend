@@ -1,0 +1,423 @@
+{
+    "regions": [
+        { "name": "CA", "include": [ "US:CA" ], },
+        { "name": "FL", "include": [ "US:FL" ], },
+        { "name": "GA", "include": [ "US:GA" ], },
+        { "name": "NJ", "include": [ "US:NJ" ], },
+        { "name": "NY", "include": [ "US:NY" ], },
+        { "name": "WA", "include": [ "US:WA" ], },
+        { "name": "Ghana", "include": ["Ghana"], },
+        { "name": "US", "include": [ "US" ], },
+        {
+            "name": "US without NY",
+            "include": [ "US" ],
+            "exclude": [ "US:NY" ],
+        },
+    ],
+    "region_queries": [
+        { "name": "CA Confirmed", "key": "Confirmed", "region": "CA", },
+        { "name": "CA Deaths", "key": "Deaths", "region": "CA", },
+        { "name": "FL Confirmed", "key": "Confirmed", "region": "FL", },
+        { "name": "FL Deaths", "key": "Deaths", "region": "FL", },
+        { "name": "GA Confirmed", "key": "Confirmed", "region": "GA", },
+        { "name": "GA Deaths", "key": "Deaths", "region": "GA", },
+        { "name": "NJ Confirmed", "key": "Confirmed", "region": "NJ", },
+        { "name": "NJ Deaths", "key": "Deaths", "region": "NJ", },
+        { "name": "NY Confirmed", "key": "Confirmed", "region": "NY", },
+        { "name": "NY Deaths", "key": "Deaths", "region": "NY", },
+        { "name": "WA Confirmed", "key": "Confirmed", "region": "WA", },
+        { "name": "WA Deaths", "key": "Deaths", "region": "WA", },
+        {
+            "name": "Ghana Confirmed",
+            "key": "Confirmed",
+            "region": "Ghana",
+        },
+        {
+            "name": "Ghana Deaths",
+            "key": "Deaths",
+            "region": "Ghana",
+        },
+        {
+            "name": "US Confirmed",
+            "key": "Confirmed",
+            "region": "US",
+        },
+        {
+            "name": "US Deaths",
+            "key": "Deaths",
+            "region": "US",
+        },
+        {
+            "name": "US without NY Confirmed",
+            "key": "Confirmed",
+            "region": "US without NY",
+        },
+        {
+            "name": "US without NY Deaths",
+            "key": "Deaths",
+            "region": "US without NY",
+        },
+    ],
+    "filtered_queries": [
+        // CA
+        { "name": "CA Confirmed Daily",
+            "filter": "daily",
+            "source": "CA Confirmed",
+        },
+        {
+            "name": "CA Confirmed 7-Day",
+            "filter": "7-day",
+            "source": "CA Confirmed Daily",
+        },
+        {
+            "name": "CA Deaths Daily",
+            "filter": "daily",
+            "source": "CA Deaths",
+        },
+        {
+            "name": "CA Deaths 7-Day",
+            "filter": "7-day",
+            "source": "CA Deaths Daily",
+        },
+        // FL
+        { "name": "FL Confirmed Daily",
+            "filter": "daily",
+            "source": "FL Confirmed",
+        },
+        {
+            "name": "FL Confirmed 7-Day",
+            "filter": "7-day",
+            "source": "FL Confirmed Daily",
+        },
+        {
+            "name": "FL Deaths Daily",
+            "filter": "daily",
+            "source": "FL Deaths",
+        },
+        {
+            "name": "FL Deaths 7-Day",
+            "filter": "7-day",
+            "source": "FL Deaths Daily",
+        },
+        // GA
+        { "name": "GA Confirmed Daily",
+            "filter": "daily",
+            "source": "GA Confirmed",
+        },
+        {
+            "name": "GA Confirmed 7-Day",
+            "filter": "7-day",
+            "source": "GA Confirmed Daily",
+        },
+        {
+            "name": "GA Deaths Daily",
+            "filter": "daily",
+            "source": "GA Deaths",
+        },
+        {
+            "name": "GA Deaths 7-Day",
+            "filter": "7-day",
+            "source": "GA Deaths Daily",
+        },
+        // NJ
+        { "name": "NJ Confirmed Daily",
+            "filter": "daily",
+            "source": "NJ Confirmed",
+        },
+        {
+            "name": "NJ Confirmed 7-Day",
+            "filter": "7-day",
+            "source": "NJ Confirmed Daily",
+        },
+        {
+            "name": "NJ Deaths Daily",
+            "filter": "daily",
+            "source": "NJ Deaths",
+        },
+        {
+            "name": "NJ Deaths 7-Day",
+            "filter": "7-day",
+            "source": "NJ Deaths Daily",
+        },
+        // NY
+        { "name": "NY Confirmed Daily",
+            "filter": "daily",
+            "source": "NY Confirmed",
+        },
+        {
+            "name": "NY Confirmed 7-Day",
+            "filter": "7-day",
+            "source": "NY Confirmed Daily",
+        },
+        {
+            "name": "NY Deaths Daily",
+            "filter": "daily",
+            "source": "NY Deaths",
+        },
+        {
+            "name": "NY Deaths 7-Day",
+            "filter": "7-day",
+            "source": "NY Deaths Daily",
+        },
+        // WA
+        {
+            "name": "WA Confirmed Daily",
+            "filter": "daily",
+            "source": "WA Confirmed",
+        },
+        {
+            "name": "WA Confirmed 7-Day",
+            "filter": "7-day",
+            "source": "WA Confirmed Daily",
+        },
+        {
+            "name": "WA Deaths Daily",
+            "filter": "daily",
+            "source": "WA Deaths",
+        },
+        {
+            "name": "WA Deaths 7-Day",
+            "filter": "7-day",
+            "source": "WA Deaths Daily",
+        },
+        {
+            "name": "Ghana Confirmed Daily",
+            "filter": "daily",
+            "source": "Ghana Confirmed",
+        },
+        {
+            "name": "Ghana Confirmed 7-Day",
+            "filter": "7-day",
+            "source": "Ghana Confirmed Daily",
+        },
+        {
+            "name": "Ghana Deaths Daily",
+            "filter": "daily",
+            "source": "Ghana Deaths",
+        },
+        {
+            "name": "Ghana Deaths 7-Day",
+            "filter": "7-day",
+            "source": "Ghana Deaths Daily",
+        },
+        {
+            "name": "US Confirmed Daily",
+            "filter": "daily",
+            "source": "US Confirmed",
+        },
+        {
+            "name": "US Confirmed 7-Day",
+            "filter": "7-day",
+            "source": "US Confirmed Daily",
+        },
+        {
+            "name": "US Deaths Daily",
+            "filter": "daily",
+            "source": "US Deaths",
+        },
+        {
+            "name": "US Deaths 7-Day",
+            "filter": "7-day",
+            "source": "US Deaths Daily",
+        },
+        {
+            "name": "US without NY Confirmed Daily",
+            "filter": "daily",
+            "source": "US without NY Confirmed",
+        },
+        {
+            "name": "US without NY Confirmed 7-Day",
+            "filter": "7-day",
+            "source": "US without NY Confirmed Daily",
+        },
+        {
+            "name": "US without NY Deaths Daily",
+            "filter": "daily",
+            "source": "US without NY Deaths",
+        },
+        {
+            "name": "US without NY Deaths 7-Day",
+            "filter": "7-day",
+            "source": "US without NY Deaths Daily",
+        },
+    ],
+    "report_tables": [
+        {
+            "name": "CA",
+            "queries": [
+                "CA Confirmed",
+                "CA Confirmed Daily",
+                "CA Confirmed 7-Day",
+                "CA Deaths",
+                "CA Deaths Daily",
+                "CA Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "FL",
+            "queries": [
+                "FL Confirmed",
+                "FL Confirmed Daily",
+                "FL Confirmed 7-Day",
+                "FL Deaths",
+                "FL Deaths Daily",
+                "FL Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "GA",
+            "queries": [
+                "GA Confirmed",
+                "GA Confirmed Daily",
+                "GA Confirmed 7-Day",
+                "GA Deaths",
+                "GA Deaths Daily",
+                "GA Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "NJ",
+            "queries": [
+                "NJ Confirmed",
+                "NJ Confirmed Daily",
+                "NJ Confirmed 7-Day",
+                "NJ Deaths",
+                "NJ Deaths Daily",
+                "NJ Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "NY",
+            "queries": [
+                "NY Confirmed",
+                "NY Confirmed Daily",
+                "NY Confirmed 7-Day",
+                "NY Deaths",
+                "NY Deaths Daily",
+                "NY Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "WA",
+            "queries": [
+                "WA Confirmed",
+                "WA Confirmed Daily",
+                "WA Confirmed 7-Day",
+                "WA Deaths",
+                "WA Deaths Daily",
+                "WA Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Ghana",
+            "queries": [
+                "Ghana Confirmed",
+                "Ghana Confirmed Daily",
+                "Ghana Confirmed 7-Day",
+                "Ghana Deaths",
+                "Ghana Deaths Daily",
+                "Ghana Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "US",
+            "queries": [
+                "US Confirmed",
+                "US Confirmed Daily",
+                "US Confirmed 7-Day",
+                "US Deaths",
+                "US Deaths Daily",
+                "US Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "US without NY",
+            "queries": [
+                "US without NY Confirmed",
+                "US without NY Confirmed Daily",
+                "US without NY Confirmed 7-Day",
+                "US without NY Deaths",
+                "US without NY Deaths Daily",
+                "US without NY Deaths 7-Day",
+            ],
+        },
+    ],
+    "sheet_outputs": [
+        {
+            // CA
+            "spreadsheet_id": "1E489tvTqkEZQOJPswSxYv6lVL0KAmzLfRsoaYh03YVo",
+            "sheet_name": "Source Data",
+            "table": "CA",
+        },
+        {
+            // FL
+            "spreadsheet_id": "1xDOtZ8owLapcVrD26oiFTaInSVcOXpGF5p9ZaRjBWlA",
+            "sheet_name": "Source Data",
+            "table": "FL",
+        },
+        {
+            // GA
+            "spreadsheet_id": "1J-U0rL6C6Ozs-jqBRl8cXGztRLQzptch_Jyf_op14D4",
+            "sheet_name": "Source Data",
+            "table": "GA",
+        },
+        {
+            // NJ
+            "spreadsheet_id": "1tIulxbwiCo2vK2mpezP1fxaVIniVILUtEzxkuIvN4TE",
+            "sheet_name": "Source Data",
+            "table": "NJ",
+        },
+        {
+            // NY
+            "spreadsheet_id": "1vnNNs6dQtlhM4FAs_vIWvM8lAGf23SPnemp9RNWG9aI",
+            "sheet_name": "Source Data",
+            "table": "NY",
+        },
+        {
+            // WA
+            "spreadsheet_id": "177TECfs3rfDBUbNDyM3TQLZEjJu7N06rzc4BsVuxc3k",
+            "sheet_name": "Source Data",
+            "table": "WA",
+        },
+        {
+            // Ghana
+            "spreadsheet_id": "1Psgyfg21XHA0hPRWZ5UUOrtrC163CIQhNTwN0jN5Bzg",
+            "sheet_name": "Source Data",
+            "table": "Ghana",
+        },
+        {
+            // US
+            "spreadsheet_id": "1Rz9jxXhuT_qwkujlU35llzlcLyxj51fvlA9re4Wx22g",
+            "sheet_name": "Source Data",
+            "table": "US",
+        },
+        {
+            // US without NY
+            "spreadsheet_id": "1-IC22hnPHnmueM1g99PZkuvP5bLtAm_0_1bYMgrKGSY",
+            "sheet_name": "Source Data",
+            "table": "US without NY",
+        },
+    ],
+    "csv_outputs": [
+        {
+            "filepath": "test_output/ny.csv",
+            "table": "NY",
+        },
+        {
+            "filepath": "test_output/wa.csv",
+            "table": "WA",
+        },
+        {
+            "filepath": "test_output/ghana.csv",
+            "table": "Ghana",
+        },
+        {
+            "filepath": "test_output/us.csv",
+            "table": "US",
+        },
+        {
+            "filepath": "test_output/us_without_ny.csv",
+            "table": "US without NY",
+        },
+    ]
+}

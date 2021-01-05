@@ -1,0 +1,36 @@
+{
+    "regions": [
+        { "name": "World", "include": [ "" ] },
+    ],
+    "region_queries": [
+        { "name": "World:Confirmed", "key": "Confirmed", "region": "World" },
+        { "name": "World:Deaths", "key": "Deaths", "region": "World", },
+    ],
+    "filtered_queries": [
+        { "name": "World:Confirmed Daily", "filter": "daily", "source": "World:Confirmed" },
+        { "name": "World:Confirmed 7-Day", "filter": "7-day", "source": "World:Confirmed Daily" },
+        { "name": "World:Deaths Daily",  "filter": "daily", "source": "World:Deaths" },
+        { "name": "World:Deaths 7-Day", "filter": "7-day", "source": "World:Deaths Daily" },
+    ],
+    "tagged_report_tables": [
+        {
+            "name": "World",
+            "tags_bundle": "Region",
+            "queries": [
+                "World:Confirmed",
+                "World:Confirmed Daily",
+                "World:Confirmed 7-Day",
+                "World:Deaths",
+                "World:Deaths Daily",
+                "World:Deaths 7-Day",
+           ],
+        },
+    ],
+    "sheet_outputs": [
+        {
+            "spreadsheet_id": "1E_r-EShCwHD6qs0VSEN-RlxgLotDbRWVBjpBcZ1K8EY",
+            "sheet_name": "Source Data",
+            "table": "World"
+        },
+    ],
+}

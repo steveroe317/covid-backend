@@ -67,6 +67,9 @@ class JohnsHopkinsDaily:
 
         return states
 
+    def numeric_value(self, text):
+        return int(float(text)) if text else 0
+
     def sum(self, sum_key):
         sum = 0
 
@@ -76,7 +79,7 @@ class JohnsHopkinsDaily:
         for data_dict in self.data_dicts:
             if sum_key in data_dict:
                 row_val = data_dict[sum_key]
-                sum += int(row_val) if row_val else 0
+                sum += self.numeric_value(row_val)
 
         return sum
 
@@ -94,7 +97,7 @@ class JohnsHopkinsDaily:
             if standard_country_name(data_dict[country_key]) == country:
                 if sum_key in data_dict:
                     row_val = data_dict[sum_key]
-                    sum += int(row_val) if row_val else 0
+                    sum += self.numeric_value(row_val)
 
         return sum
 
@@ -115,7 +118,7 @@ class JohnsHopkinsDaily:
                 if _match_state(data_dict[state_key], state):
                     if sum_key in data_dict:
                         row_val = data_dict[sum_key]
-                        sum += int(row_val) if row_val else 0
+                        sum += self.numeric_value(row_val)
 
         return sum
 
@@ -145,7 +148,7 @@ class JohnsHopkinsDaily:
                         if data_dict[admin2_key] == county:
                             if sum_key in data_dict:
                                 row_val = data_dict[sum_key]
-                                sum += int(row_val) if row_val else 0
+                                sum += self.numeric_value(row_val)
 
         return sum
 
