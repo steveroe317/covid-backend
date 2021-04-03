@@ -220,7 +220,8 @@ class CsvOutput:
     @classmethod
     def create(cls, output_dict):
         filepath = _get_required_value(output_dict, 'CsvOutput', 'filepath')
-        table = _get_required_value(output_dict, 'SheetOutput', 'table')
+        table = _get_required_value(
+            output_dict, 'SheetCsvOutputOutput', 'table')
         return CsvOutput(filepath, table)
 
     def __init__(self, filepath, table):
@@ -229,6 +230,25 @@ class CsvOutput:
 
     def __str__(self):
         return 'filepath: %s, table: %s' % (self.filepath, self.table)
+
+
+class FirebaseOutput:
+    """Specifies a Google Firebase document output."""
+
+    @classmethod
+    def create(cls, output_dict):
+        collection_path = _get_required_value(output_dict, 'FirebaseOutput',
+                                              'collection_path')
+        table = _get_required_value(output_dict, 'FirebaseOutput', 'table')
+        return FirebaseOutput(collection_path, table)
+
+    def __init__(self, collection_path, table):
+        self.collection_path = collection_path
+        self.table = table
+
+    def __str__(self):
+        return 'collection_path: %s, table: %s' % (self.collection_path,
+                                                   self.table)
 
 
 class QueryReport:
@@ -251,14 +271,16 @@ class QueryReport:
             reports_dict, 'reports', 'sheet_outputs', SheetOutput.create)
         csv_outputs = _get_optional_object_list(
             reports_dict, 'reports', 'csv_outputs', CsvOutput.create)
+        firebase_outputs = _get_optional_object_list(
+            reports_dict, 'reports', 'firebase_outputs', FirebaseOutput.create)
 
         return QueryReport(regions, reqion_queries, filtered_queries,
                            report_tables, tagged_report_tables, sheet_outputs,
-                           csv_outputs)
+                           csv_outputs, firebase_outputs)
 
     def __init__(self, regions, reqion_queries, filtered_queries,
                  report_tables, tagged_report_tables, sheet_outputs,
-                 csv_outputs):
+                 csv_outputs, firebase_outputs):
         self.regions = regions
         self.region_queries = reqion_queries
         self.filtered_queries = filtered_queries
@@ -266,15 +288,17 @@ class QueryReport:
         self.tagged_report_tables = tagged_report_tables
         self.sheet_outputs = sheet_outputs
         self.csv_outputs = csv_outputs
+        self.firebase_outputs = firebase_outputs
 
     def __str__(self):
         return ('regions: %s, region_queries: %s, filtered_queries: %s '
                 'report_tables: %s, tagged_report_tables: %s, sheet_outputs: %s, '
-                'csv_outputs: %s' % (
+                'csv_outputs: %s, firebase_outputs %s' % (
                     [str(region) for region in self.regions],
                     [str(query) for query in self.region_queries],
                     [str(query) for query in self.filtered_queries],
                     [str(table) for table in self.report_tables],
                     [str(table) for table in self.tagged_report_tables],
                     [str(sheet) for sheet in self.sheet_outputs],
-                    [str(csv) for csv in self.csv_outputs]))
+                    [str(csv) for csv in self.csv_outputs],
+                    [str(firebase) for firebase in self.firebase_outputs]))
