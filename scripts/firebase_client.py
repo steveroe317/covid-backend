@@ -1,20 +1,26 @@
 #!/usr/bin/env python3
 
 import datetime
+import functools
 import re
 
 from google.cloud import firestore
 from google.oauth2 import service_account
 
 
+@functools.cache
 def _Authorize():
     return service_account.Credentials.from_service_account_file(
         'covid-trends-1fafa-firebase-adminsdk.json')
 
 
-def WriteFirebaseDocuments(collection_path, values):
+def WriteFirebaseDocuments(document_path, values):
+    print(document_path)
     doc_dict = {}
-    header_row = values[0]
+    header_row = []
+    for name in values[0]:
+        tokens = name.split(':')
+        header_row.append(tokens[-1])
     for field in header_row:
         doc_dict[field] = []
     for row in values[1:]:
@@ -27,14 +33,14 @@ def WriteFirebaseDocuments(collection_path, values):
 
     cred = _Authorize()
     db = firestore.Client("covid-trends-1fafa", cred)
-    doc_ref = db.collection(u'time-series').document(u'World')
+    doc_ref = db.document(document_path)
     doc_ref.set(doc_dict)
 
 
 def main():
     cred = _Authorize()
     db = firestore.Client("covid-trends-1fafa", cred)
-    doc_ref = db.collection(u'time-series').document(u'World')
+    doc_ref = db.collection(u'test').document(u'World')
     doc_ref.set({
         u'Confirmed': [13, 17, 21]
     })

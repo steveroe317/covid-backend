@@ -198,7 +198,7 @@ def write_firebase_output(firebase_output, tables, verbose):
     if verbose:
         print(firebase_output.table)
     rows = tables[firebase_output.table]
-    WriteFirebaseDocuments(firebase_output.collection_path, rows)
+    WriteFirebaseDocuments(firebase_output.document_path, rows)
 
 
 def write_firebase_outputs(firebase_outputs, tables, verbose):

@@ -21,7 +21,7 @@ def main():
     subprocess.run([os.path.join(SCRIPTS_DIR, 'get_jh_data.py')])
 
     if args.verbose:
-        print('Updating spreadsheets with latest data.')
+        print('Updating databases.')
     for query_json in args.query_jsons:
         if args.verbose:
             print(query_json)

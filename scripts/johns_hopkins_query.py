@@ -237,18 +237,18 @@ class FirebaseOutput:
 
     @classmethod
     def create(cls, output_dict):
-        collection_path = _get_required_value(output_dict, 'FirebaseOutput',
-                                              'collection_path')
+        document_path = _get_required_value(output_dict, 'FirebaseOutput',
+                                            'document_path')
         table = _get_required_value(output_dict, 'FirebaseOutput', 'table')
-        return FirebaseOutput(collection_path, table)
+        return FirebaseOutput(document_path, table)
 
-    def __init__(self, collection_path, table):
-        self.collection_path = collection_path
+    def __init__(self, document_path, table):
+        self.document_path = document_path
         self.table = table
 
     def __str__(self):
-        return 'collection_path: %s, table: %s' % (self.collection_path,
-                                                   self.table)
+        return 'document_path: %s, table: %s' % (self.document_path,
+                                                 self.table)
 
 
 class QueryReport:
