@@ -31,6 +31,12 @@
         { "name": "World:China", "include": [ "China" ] },
         { "name": "World:Ecuador", "include": [ "Ecuador" ] },
         { "name": "World:Sweden", "include": [ "Sweden" ] },
+        { "name": "World:Norway", "include": [ "Norway" ] },
+        { "name": "World:Denmark", "include": [ "Denmark" ] },
+        { "name": "World:Finland", "include": [ "Finland" ] },
+        { "name": "World:Ghana", "include": [ "Ghana" ] },
+        { "name": "World:Uruguay", "include": [ "Uruguay" ] },
+        { "name": "World:Paraguay", "include": [ "Paraguay" ] },
         { "name": "World:US:AK", "include": [ "US:AK" ] },
         { "name": "World:US:AL", "include": [ "US:AL" ] },
         { "name": "World:US:AR", "include": [ "US:AR" ] },
@@ -189,6 +195,18 @@
         { "name": "World:Ecuador:Deaths", "key": "Deaths", "region": "World:Ecuador", },
         { "name": "World:Sweden:Confirmed", "key": "Confirmed", "region": "World:Sweden" },
         { "name": "World:Sweden:Deaths", "key": "Deaths", "region": "World:Sweden", },
+        { "name": "World:Norway:Confirmed", "key": "Confirmed", "region": "World:Norway" },
+        { "name": "World:Norway:Deaths", "key": "Deaths", "region": "World:Norway", },
+        { "name": "World:Denmark:Confirmed", "key": "Confirmed", "region": "World:Denmark" },
+        { "name": "World:Denmark:Deaths", "key": "Deaths", "region": "World:Denmark", },
+        { "name": "World:Finland:Confirmed", "key": "Confirmed", "region": "World:Finland" },
+        { "name": "World:Finland:Deaths", "key": "Deaths", "region": "World:Finland", },
+        { "name": "World:Ghana:Confirmed", "key": "Confirmed", "region": "World:Ghana" },
+        { "name": "World:Ghana:Deaths", "key": "Deaths", "region": "World:Ghana", },
+        { "name": "World:Uruguay:Confirmed", "key": "Confirmed", "region": "World:Uruguay" },
+        { "name": "World:Uruguay:Deaths", "key": "Deaths", "region": "World:Uruguay", },
+        { "name": "World:Paraguay:Confirmed", "key": "Confirmed", "region": "World:Paraguay" },
+        { "name": "World:Paraguay:Deaths", "key": "Deaths", "region": "World:Paraguay", },
         { "name": "World:US:AK:Confirmed", "key": "Confirmed", "region": "World:US:AK" },
         { "name": "World:US:AK:Deaths", "key": "Deaths", "region": "World:US:AK", },
         { "name": "World:US:AL:Confirmed", "key": "Confirmed", "region": "World:US:AL" },
@@ -503,6 +521,30 @@
         { "name": "World:Sweden:Confirmed 7-Day", "filter": "7-day", "source": "World:Sweden:Confirmed Daily" },
         { "name": "World:Sweden:Deaths Daily",  "filter": "daily", "source": "World:Sweden:Deaths" },
         { "name": "World:Sweden:Deaths 7-Day", "filter": "7-day", "source": "World:Sweden:Deaths Daily" },
+        { "name": "World:Norway:Confirmed Daily", "filter": "daily", "source": "World:Norway:Confirmed" },
+        { "name": "World:Norway:Confirmed 7-Day", "filter": "7-day", "source": "World:Norway:Confirmed Daily" },
+        { "name": "World:Norway:Deaths Daily",  "filter": "daily", "source": "World:Norway:Deaths" },
+        { "name": "World:Norway:Deaths 7-Day", "filter": "7-day", "source": "World:Norway:Deaths Daily" },
+        { "name": "World:Denmark:Confirmed Daily", "filter": "daily", "source": "World:Denmark:Confirmed" },
+        { "name": "World:Denmark:Confirmed 7-Day", "filter": "7-day", "source": "World:Denmark:Confirmed Daily" },
+        { "name": "World:Denmark:Deaths Daily",  "filter": "daily", "source": "World:Denmark:Deaths" },
+        { "name": "World:Denmark:Deaths 7-Day", "filter": "7-day", "source": "World:Denmark:Deaths Daily" },
+        { "name": "World:Finland:Confirmed Daily", "filter": "daily", "source": "World:Finland:Confirmed" },
+        { "name": "World:Finland:Confirmed 7-Day", "filter": "7-day", "source": "World:Finland:Confirmed Daily" },
+        { "name": "World:Finland:Deaths Daily",  "filter": "daily", "source": "World:Finland:Deaths" },
+        { "name": "World:Finland:Deaths 7-Day", "filter": "7-day", "source": "World:Finland:Deaths Daily" },
+        { "name": "World:Ghana:Confirmed Daily", "filter": "daily", "source": "World:Ghana:Confirmed" },
+        { "name": "World:Ghana:Confirmed 7-Day", "filter": "7-day", "source": "World:Ghana:Confirmed Daily" },
+        { "name": "World:Ghana:Deaths Daily",  "filter": "daily", "source": "World:Ghana:Deaths" },
+        { "name": "World:Ghana:Deaths 7-Day", "filter": "7-day", "source": "World:Ghana:Deaths Daily" },
+        { "name": "World:Uruguay:Confirmed Daily", "filter": "daily", "source": "World:Uruguay:Confirmed" },
+        { "name": "World:Uruguay:Confirmed 7-Day", "filter": "7-day", "source": "World:Uruguay:Confirmed Daily" },
+        { "name": "World:Uruguay:Deaths Daily",  "filter": "daily", "source": "World:Uruguay:Deaths" },
+        { "name": "World:Uruguay:Deaths 7-Day", "filter": "7-day", "source": "World:Uruguay:Deaths Daily" },
+        { "name": "World:Paraguay:Confirmed Daily", "filter": "daily", "source": "World:Paraguay:Confirmed" },
+        { "name": "World:Paraguay:Confirmed 7-Day", "filter": "7-day", "source": "World:Paraguay:Confirmed Daily" },
+        { "name": "World:Paraguay:Deaths Daily",  "filter": "daily", "source": "World:Paraguay:Deaths" },
+        { "name": "World:Paraguay:Deaths 7-Day", "filter": "7-day", "source": "World:Paraguay:Deaths Daily" },
         { "name": "World:US:AK:Confirmed Daily", "filter": "daily", "source": "World:US:AK:Confirmed" },
         { "name": "World:US:AK:Confirmed 7-Day", "filter": "7-day", "source": "World:US:AK:Confirmed Daily" },
         { "name": "World:US:AK:Deaths Daily",  "filter": "daily", "source": "World:US:AK:Deaths" },
@@ -1220,6 +1262,72 @@
                 "World:Sweden:Deaths",
                 "World:Sweden:Deaths Daily",
                 "World:Sweden:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Norway",
+            "queries": [
+                "World:Norway:Confirmed",
+                "World:Norway:Confirmed Daily",
+                "World:Norway:Confirmed 7-Day",
+                "World:Norway:Deaths",
+                "World:Norway:Deaths Daily",
+                "World:Norway:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Denmark",
+            "queries": [
+                "World:Denmark:Confirmed",
+                "World:Denmark:Confirmed Daily",
+                "World:Denmark:Confirmed 7-Day",
+                "World:Denmark:Deaths",
+                "World:Denmark:Deaths Daily",
+                "World:Denmark:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Finland",
+            "queries": [
+                "World:Finland:Confirmed",
+                "World:Finland:Confirmed Daily",
+                "World:Finland:Confirmed 7-Day",
+                "World:Finland:Deaths",
+                "World:Finland:Deaths Daily",
+                "World:Finland:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Ghana",
+            "queries": [
+                "World:Ghana:Confirmed",
+                "World:Ghana:Confirmed Daily",
+                "World:Ghana:Confirmed 7-Day",
+                "World:Ghana:Deaths",
+                "World:Ghana:Deaths Daily",
+                "World:Ghana:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Uruguay",
+            "queries": [
+                "World:Uruguay:Confirmed",
+                "World:Uruguay:Confirmed Daily",
+                "World:Uruguay:Confirmed 7-Day",
+                "World:Uruguay:Deaths",
+                "World:Uruguay:Deaths Daily",
+                "World:Uruguay:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Paraguay",
+            "queries": [
+                "World:Paraguay:Confirmed",
+                "World:Paraguay:Confirmed Daily",
+                "World:Paraguay:Confirmed 7-Day",
+                "World:Paraguay:Deaths",
+                "World:Paraguay:Deaths Daily",
+                "World:Paraguay:Deaths 7-Day",
             ],
         },
         {
@@ -2381,6 +2489,30 @@
         {
             "document_path": "time-series/World/entities/Sweden",
             "table": "World:Sweden"
+        },
+        {
+            "document_path": "time-series/World/entities/Norway",
+            "table": "World:Norway"
+        },
+        {
+            "document_path": "time-series/World/entities/Denmark",
+            "table": "World:Denmark"
+        },
+        {
+            "document_path": "time-series/World/entities/Finland",
+            "table": "World:Finland"
+        },
+        {
+            "document_path": "time-series/World/entities/Ghana",
+            "table": "World:Ghana"
+        },
+        {
+            "document_path": "time-series/World/entities/Uruguay",
+            "table": "World:Uruguay"
+        },
+        {
+            "document_path": "time-series/World/entities/Paraguay",
+            "table": "World:Paraguay"
         },
         {
             "document_path": "time-series/World/entities/US/entities/AK",

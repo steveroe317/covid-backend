@@ -40,7 +40,13 @@ COUNTRIES = [
     'World:Kazakhstan',
     'World:China',
     'World:Ecuador',
-    'World:Sweden'
+    'World:Sweden',
+    'World:Norway',
+    'World:Denmark',
+    'World:Finland',
+    'World:Ghana',
+    'World:Uruguay',
+    'World:Paraguay',
 ]
 
 US_STATES = [
