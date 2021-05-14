@@ -47,6 +47,11 @@ COUNTRIES = [
     'World:Ghana',
     'World:Uruguay',
     'World:Paraguay',
+    'World:Taiwan',
+    'World:New Zealand',
+    'World:Thailand',
+    'World:Australia',
+    'World:Israel',
 ]
 
 US_STATES = [

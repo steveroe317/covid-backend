@@ -37,6 +37,11 @@
         { "name": "World:Ghana", "include": [ "Ghana" ] },
         { "name": "World:Uruguay", "include": [ "Uruguay" ] },
         { "name": "World:Paraguay", "include": [ "Paraguay" ] },
+        { "name": "World:Taiwan", "include": [ "Taiwan" ] },
+        { "name": "World:New Zealand", "include": [ "New Zealand" ] },
+        { "name": "World:Thailand", "include": [ "Thailand" ] },
+        { "name": "World:Australia", "include": [ "Australia" ] },
+        { "name": "World:Israel", "include": [ "Israel" ] },
         { "name": "World:US:AK", "include": [ "US:AK" ] },
         { "name": "World:US:AL", "include": [ "US:AL" ] },
         { "name": "World:US:AR", "include": [ "US:AR" ] },
@@ -207,6 +212,16 @@
         { "name": "World:Uruguay:Deaths", "key": "Deaths", "region": "World:Uruguay", },
         { "name": "World:Paraguay:Confirmed", "key": "Confirmed", "region": "World:Paraguay" },
         { "name": "World:Paraguay:Deaths", "key": "Deaths", "region": "World:Paraguay", },
+        { "name": "World:Taiwan:Confirmed", "key": "Confirmed", "region": "World:Taiwan" },
+        { "name": "World:Taiwan:Deaths", "key": "Deaths", "region": "World:Taiwan", },
+        { "name": "World:New Zealand:Confirmed", "key": "Confirmed", "region": "World:New Zealand" },
+        { "name": "World:New Zealand:Deaths", "key": "Deaths", "region": "World:New Zealand", },
+        { "name": "World:Thailand:Confirmed", "key": "Confirmed", "region": "World:Thailand" },
+        { "name": "World:Thailand:Deaths", "key": "Deaths", "region": "World:Thailand", },
+        { "name": "World:Australia:Confirmed", "key": "Confirmed", "region": "World:Australia" },
+        { "name": "World:Australia:Deaths", "key": "Deaths", "region": "World:Australia", },
+        { "name": "World:Israel:Confirmed", "key": "Confirmed", "region": "World:Israel" },
+        { "name": "World:Israel:Deaths", "key": "Deaths", "region": "World:Israel", },
         { "name": "World:US:AK:Confirmed", "key": "Confirmed", "region": "World:US:AK" },
         { "name": "World:US:AK:Deaths", "key": "Deaths", "region": "World:US:AK", },
         { "name": "World:US:AL:Confirmed", "key": "Confirmed", "region": "World:US:AL" },
@@ -545,6 +560,26 @@
         { "name": "World:Paraguay:Confirmed 7-Day", "filter": "7-day", "source": "World:Paraguay:Confirmed Daily" },
         { "name": "World:Paraguay:Deaths Daily",  "filter": "daily", "source": "World:Paraguay:Deaths" },
         { "name": "World:Paraguay:Deaths 7-Day", "filter": "7-day", "source": "World:Paraguay:Deaths Daily" },
+        { "name": "World:Taiwan:Confirmed Daily", "filter": "daily", "source": "World:Taiwan:Confirmed" },
+        { "name": "World:Taiwan:Confirmed 7-Day", "filter": "7-day", "source": "World:Taiwan:Confirmed Daily" },
+        { "name": "World:Taiwan:Deaths Daily",  "filter": "daily", "source": "World:Taiwan:Deaths" },
+        { "name": "World:Taiwan:Deaths 7-Day", "filter": "7-day", "source": "World:Taiwan:Deaths Daily" },
+        { "name": "World:New Zealand:Confirmed Daily", "filter": "daily", "source": "World:New Zealand:Confirmed" },
+        { "name": "World:New Zealand:Confirmed 7-Day", "filter": "7-day", "source": "World:New Zealand:Confirmed Daily" },
+        { "name": "World:New Zealand:Deaths Daily",  "filter": "daily", "source": "World:New Zealand:Deaths" },
+        { "name": "World:New Zealand:Deaths 7-Day", "filter": "7-day", "source": "World:New Zealand:Deaths Daily" },
+        { "name": "World:Thailand:Confirmed Daily", "filter": "daily", "source": "World:Thailand:Confirmed" },
+        { "name": "World:Thailand:Confirmed 7-Day", "filter": "7-day", "source": "World:Thailand:Confirmed Daily" },
+        { "name": "World:Thailand:Deaths Daily",  "filter": "daily", "source": "World:Thailand:Deaths" },
+        { "name": "World:Thailand:Deaths 7-Day", "filter": "7-day", "source": "World:Thailand:Deaths Daily" },
+        { "name": "World:Australia:Confirmed Daily", "filter": "daily", "source": "World:Australia:Confirmed" },
+        { "name": "World:Australia:Confirmed 7-Day", "filter": "7-day", "source": "World:Australia:Confirmed Daily" },
+        { "name": "World:Australia:Deaths Daily",  "filter": "daily", "source": "World:Australia:Deaths" },
+        { "name": "World:Australia:Deaths 7-Day", "filter": "7-day", "source": "World:Australia:Deaths Daily" },
+        { "name": "World:Israel:Confirmed Daily", "filter": "daily", "source": "World:Israel:Confirmed" },
+        { "name": "World:Israel:Confirmed 7-Day", "filter": "7-day", "source": "World:Israel:Confirmed Daily" },
+        { "name": "World:Israel:Deaths Daily",  "filter": "daily", "source": "World:Israel:Deaths" },
+        { "name": "World:Israel:Deaths 7-Day", "filter": "7-day", "source": "World:Israel:Deaths Daily" },
         { "name": "World:US:AK:Confirmed Daily", "filter": "daily", "source": "World:US:AK:Confirmed" },
         { "name": "World:US:AK:Confirmed 7-Day", "filter": "7-day", "source": "World:US:AK:Confirmed Daily" },
         { "name": "World:US:AK:Deaths Daily",  "filter": "daily", "source": "World:US:AK:Deaths" },
@@ -1328,6 +1363,61 @@
                 "World:Paraguay:Deaths",
                 "World:Paraguay:Deaths Daily",
                 "World:Paraguay:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Taiwan",
+            "queries": [
+                "World:Taiwan:Confirmed",
+                "World:Taiwan:Confirmed Daily",
+                "World:Taiwan:Confirmed 7-Day",
+                "World:Taiwan:Deaths",
+                "World:Taiwan:Deaths Daily",
+                "World:Taiwan:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:New Zealand",
+            "queries": [
+                "World:New Zealand:Confirmed",
+                "World:New Zealand:Confirmed Daily",
+                "World:New Zealand:Confirmed 7-Day",
+                "World:New Zealand:Deaths",
+                "World:New Zealand:Deaths Daily",
+                "World:New Zealand:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Thailand",
+            "queries": [
+                "World:Thailand:Confirmed",
+                "World:Thailand:Confirmed Daily",
+                "World:Thailand:Confirmed 7-Day",
+                "World:Thailand:Deaths",
+                "World:Thailand:Deaths Daily",
+                "World:Thailand:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Australia",
+            "queries": [
+                "World:Australia:Confirmed",
+                "World:Australia:Confirmed Daily",
+                "World:Australia:Confirmed 7-Day",
+                "World:Australia:Deaths",
+                "World:Australia:Deaths Daily",
+                "World:Australia:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Israel",
+            "queries": [
+                "World:Israel:Confirmed",
+                "World:Israel:Confirmed Daily",
+                "World:Israel:Confirmed 7-Day",
+                "World:Israel:Deaths",
+                "World:Israel:Deaths Daily",
+                "World:Israel:Deaths 7-Day",
             ],
         },
         {
@@ -2513,6 +2603,26 @@
         {
             "document_path": "time-series/World/entities/Paraguay",
             "table": "World:Paraguay"
+        },
+        {
+            "document_path": "time-series/World/entities/Taiwan",
+            "table": "World:Taiwan"
+        },
+        {
+            "document_path": "time-series/World/entities/New Zealand",
+            "table": "World:New Zealand"
+        },
+        {
+            "document_path": "time-series/World/entities/Thailand",
+            "table": "World:Thailand"
+        },
+        {
+            "document_path": "time-series/World/entities/Australia",
+            "table": "World:Australia"
+        },
+        {
+            "document_path": "time-series/World/entities/Israel",
+            "table": "World:Israel"
         },
         {
             "document_path": "time-series/World/entities/US/entities/AK",
