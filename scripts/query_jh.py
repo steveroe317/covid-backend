@@ -3,12 +3,13 @@
 import argparse
 import json
 import os
+import sys
 import time
 from collections import deque
 
 import json5
 
-from firebase_client import WriteFirebaseDocuments
+from firebase_entities import write_firebase_entities
 from johns_hopkins_journal import JohnsHopkinsJournal
 from johns_hopkins_query import (AdminArea, CsvOutput, FilteredQuery,
                                  FirebaseOutput, QueryReport, Region,
@@ -194,18 +195,6 @@ def write_sheet_outputs(sheet_outputs, tables, verbose):
         time.sleep(_WRITE_SLEEP_SEC)
 
 
-def write_firebase_output(firebase_output, tables, verbose):
-    if verbose:
-        print(firebase_output.table)
-    rows = tables[firebase_output.table]
-    WriteFirebaseDocuments(firebase_output.document_path, rows)
-
-
-def write_firebase_outputs(firebase_outputs, tables, verbose):
-    for firebase_output in firebase_outputs:
-        write_firebase_output(firebase_output, tables, verbose)
-
-
 def main():
     parser = init_parser()
     args = parser.parse_args()
@@ -228,7 +217,8 @@ def main():
 
     write_csv_outputs(query_report.csv_outputs, tables, args.verbose)
     write_sheet_outputs(query_report.sheet_outputs, tables, args.verbose)
-    write_firebase_outputs(query_report.firebase_outputs, tables, args.verbose)
+    write_firebase_entities(
+        query_report.firebase_outputs, tables, args.verbose)
 
 
 if __name__ == '__main__':

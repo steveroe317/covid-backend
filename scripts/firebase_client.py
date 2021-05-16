@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
-import datetime
 import functools
-import re
 
 from google.cloud import firestore
 from google.oauth2 import service_account
@@ -14,27 +12,12 @@ def _Authorize():
         'covid-trends-1fafa-firebase-adminsdk.json')
 
 
-def WriteFirebaseDocuments(document_path, values):
+def WriteFirebaseDocument(document_path, document_dict):
     print(document_path)
-    doc_dict = {}
-    header_row = []
-    for name in values[0]:
-        tokens = name.split(':')
-        header_row.append(tokens[-1])
-    for field in header_row:
-        doc_dict[field] = []
-    for row in values[1:]:
-        for index, value in enumerate(row):
-            if value.isnumeric():
-                value = int(value)
-            elif re.match(r'\d{4}-\d{2}-\d{2}$', value):
-                value = datetime.datetime.fromisoformat(value)
-            doc_dict[header_row[index]].append(value)
-
     cred = _Authorize()
     db = firestore.Client("covid-trends-1fafa", cred)
     doc_ref = db.document(document_path)
-    doc_ref.set(doc_dict)
+    doc_ref.set(document_dict)
 
 
 def main():
