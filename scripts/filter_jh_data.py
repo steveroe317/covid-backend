@@ -56,7 +56,7 @@ def init_parser():
 
     parser_world_data = subparsers.add_parser(
         'world-data',
-        help='list csv data for the whole world'
+        help='list csv data for the world'
     )
     parser_world_data.set_defaults(func=world_data)
 
@@ -136,13 +136,28 @@ def init_parser():
 
     parser_states = subparsers.add_parser(
         'states',
-        help='show states (there may be variants)')
+        help='show states in country (there may be variants)')
     parser_states.add_argument(
         '--country',
         default='US',
         metavar='COUNTRY',
         help='(US, Ghana, ...')
     parser_states.set_defaults(func=states)
+
+    parser_admin2s = subparsers.add_parser(
+        'admin2-locations',
+        help='show admin2s in country and states (there may be variants)')
+    parser_admin2s.add_argument(
+        '--country',
+        default='US',
+        metavar='COUNTRY',
+        help='(US, Ghana, ...')
+    parser_admin2s.add_argument(
+        '--state',
+        default='WA',
+        metavar='STATE',
+        help='(WA, NY, ...')
+    parser_admin2s.set_defaults(func=admin2_locations)
 
     parser_country_locations = subparsers.add_parser(
         'country-locations',
@@ -213,6 +228,14 @@ def states(args):
     for label in sorted(state_labels):
         if convert_us_location_to_state(label) == 'XX':
             print('warning: unknown state label "{}"'.format(label))
+
+
+def admin2_locations(args):
+    journal = JohnsHopkinsJournal(args.covid_csv_dir)
+    locations = journal.country_state_admin2_locations(
+        args.country, args.state)
+    for location in sorted(locations):
+        print(location)
 
 
 def world_data(args):

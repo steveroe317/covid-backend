@@ -67,6 +67,33 @@ class JohnsHopkinsDaily:
 
         return states
 
+    def country_state_admin2_locations(self, country, state):
+        if not self.data_dicts:
+            return set()
+
+        admin2_key = None
+        state_key = None
+        country_key = None
+        for key in self.data_dicts[0].keys():
+            if 'Admin2' in key:
+                admin2_key = key
+            if 'State' in key:
+                state_key = key
+            if 'Country' in key:
+                country_key = key
+
+        if not country_key or not state_key or not admin2_key:
+            return set()
+
+        locations = set()
+        for data_dict in self.data_dicts:
+            data_country = standard_country_name(data_dict[country_key])
+            if data_country == country:
+                if _match_state(data_dict[state_key], state):
+                    locations.add(data_dict[admin2_key])
+
+        return locations
+
     def numeric_value(self, text):
         return int(float(text)) if text else 0
 

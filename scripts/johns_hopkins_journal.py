@@ -61,6 +61,13 @@ class JohnsHopkinsJournal:
             state_labels |= daily.country_state_locations(country)
         return state_labels
 
+    def country_state_admin2_locations(self, country, state):
+        admin2_labels = set()
+        for daily in self.dailies.values():
+            admin2_labels |= daily.country_state_admin2_locations(
+                country, state)
+        return admin2_labels
+
     def get_world_data(self, data_keys):
         data = {}
         for date in self.dailies.keys():
