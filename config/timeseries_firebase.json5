@@ -11,6 +11,7 @@
         { "name": "World:Chile", "include": [ "Chile" ] },
         { "name": "World:China", "include": [ "China" ] },
         { "name": "World:Colombia", "include": [ "Colombia" ] },
+        { "name": "World:Czechia", "include": [ "Czechia" ] },
         { "name": "World:Denmark", "include": [ "Denmark" ] },
         { "name": "World:Ecuador", "include": [ "Ecuador" ] },
         { "name": "World:Egypt", "include": [ "Egypt" ] },
@@ -34,7 +35,10 @@
         { "name": "World:Kazakhstan", "include": [ "Kazakhstan" ] },
         { "name": "World:Laos", "include": [ "Laos" ] },
         { "name": "World:Liberia", "include": [ "Liberia" ] },
+        { "name": "World:Malaysia", "include": [ "Malaysia" ] },
         { "name": "World:Mexico", "include": [ "Mexico" ] },
+        { "name": "World:Myanmar", "include": [ "Myanmar" ] },
+        { "name": "World:Netherlands", "include": [ "Netherlands" ] },
         { "name": "World:Nepal", "include": [ "Nepal" ] },
         { "name": "World:New Zealand", "include": [ "New Zealand" ] },
         { "name": "World:North Ireland", "include": [ "North Ireland" ] },
@@ -43,7 +47,9 @@
         { "name": "World:Paraguay", "include": [ "Paraguay" ] },
         { "name": "World:Peru", "include": [ "Peru" ] },
         { "name": "World:Philippines", "include": [ "Philippines" ] },
+        { "name": "World:Poland", "include": [ "Poland" ] },
         { "name": "World:Qatar", "include": [ "Qatar" ] },
+        { "name": "World:Romania", "include": [ "Romania" ] },
         { "name": "World:Russia", "include": [ "Russia" ] },
         { "name": "World:Rwanda", "include": [ "Rwanda" ] },
         { "name": "World:Saudi Arabia", "include": [ "Saudi Arabia" ] },
@@ -57,8 +63,10 @@
         { "name": "World:Taiwan", "include": [ "Taiwan" ] },
         { "name": "World:Thailand", "include": [ "Thailand" ] },
         { "name": "World:Turkey", "include": [ "Turkey" ] },
+        { "name": "World:Ukraine", "include": [ "Ukraine" ] },
         { "name": "World:United Kingdom", "include": [ "United Kingdom" ] },
         { "name": "World:Uruguay", "include": [ "Uruguay" ] },
+        { "name": "World:Vietnam", "include": [ "Vietnam" ] },
         { "name": "World:US", "include": [ "US" ] },
         { "name": "World:US:AK", "include": [ "US:AK" ] },
         { "name": "World:US:AL", "include": [ "US:AL" ] },
@@ -236,6 +244,8 @@
         { "name": "World:China:Deaths", "key": "Deaths", "region": "World:China", },
         { "name": "World:Colombia:Confirmed", "key": "Confirmed", "region": "World:Colombia" },
         { "name": "World:Colombia:Deaths", "key": "Deaths", "region": "World:Colombia", },
+        { "name": "World:Czechia:Confirmed", "key": "Confirmed", "region": "World:Czechia" },
+        { "name": "World:Czechia:Deaths", "key": "Deaths", "region": "World:Czechia", },
         { "name": "World:Denmark:Confirmed", "key": "Confirmed", "region": "World:Denmark" },
         { "name": "World:Denmark:Deaths", "key": "Deaths", "region": "World:Denmark", },
         { "name": "World:Ecuador:Confirmed", "key": "Confirmed", "region": "World:Ecuador" },
@@ -282,8 +292,14 @@
         { "name": "World:Laos:Deaths", "key": "Deaths", "region": "World:Laos", },
         { "name": "World:Liberia:Confirmed", "key": "Confirmed", "region": "World:Liberia" },
         { "name": "World:Liberia:Deaths", "key": "Deaths", "region": "World:Liberia", },
+        { "name": "World:Malaysia:Confirmed", "key": "Confirmed", "region": "World:Malaysia" },
+        { "name": "World:Malaysia:Deaths", "key": "Deaths", "region": "World:Malaysia", },
         { "name": "World:Mexico:Confirmed", "key": "Confirmed", "region": "World:Mexico" },
         { "name": "World:Mexico:Deaths", "key": "Deaths", "region": "World:Mexico", },
+        { "name": "World:Myanmar:Confirmed", "key": "Confirmed", "region": "World:Myanmar" },
+        { "name": "World:Myanmar:Deaths", "key": "Deaths", "region": "World:Myanmar", },
+        { "name": "World:Netherlands:Confirmed", "key": "Confirmed", "region": "World:Netherlands" },
+        { "name": "World:Netherlands:Deaths", "key": "Deaths", "region": "World:Netherlands", },
         { "name": "World:Nepal:Confirmed", "key": "Confirmed", "region": "World:Nepal" },
         { "name": "World:Nepal:Deaths", "key": "Deaths", "region": "World:Nepal", },
         { "name": "World:New Zealand:Confirmed", "key": "Confirmed", "region": "World:New Zealand" },
@@ -300,8 +316,12 @@
         { "name": "World:Peru:Deaths", "key": "Deaths", "region": "World:Peru", },
         { "name": "World:Philippines:Confirmed", "key": "Confirmed", "region": "World:Philippines" },
         { "name": "World:Philippines:Deaths", "key": "Deaths", "region": "World:Philippines", },
+        { "name": "World:Poland:Confirmed", "key": "Confirmed", "region": "World:Poland" },
+        { "name": "World:Poland:Deaths", "key": "Deaths", "region": "World:Poland", },
         { "name": "World:Qatar:Confirmed", "key": "Confirmed", "region": "World:Qatar" },
         { "name": "World:Qatar:Deaths", "key": "Deaths", "region": "World:Qatar", },
+        { "name": "World:Romania:Confirmed", "key": "Confirmed", "region": "World:Romania" },
+        { "name": "World:Romania:Deaths", "key": "Deaths", "region": "World:Romania", },
         { "name": "World:Russia:Confirmed", "key": "Confirmed", "region": "World:Russia" },
         { "name": "World:Russia:Deaths", "key": "Deaths", "region": "World:Russia", },
         { "name": "World:Rwanda:Confirmed", "key": "Confirmed", "region": "World:Rwanda" },
@@ -328,10 +348,14 @@
         { "name": "World:Thailand:Deaths", "key": "Deaths", "region": "World:Thailand", },
         { "name": "World:Turkey:Confirmed", "key": "Confirmed", "region": "World:Turkey" },
         { "name": "World:Turkey:Deaths", "key": "Deaths", "region": "World:Turkey", },
+        { "name": "World:Ukraine:Confirmed", "key": "Confirmed", "region": "World:Ukraine" },
+        { "name": "World:Ukraine:Deaths", "key": "Deaths", "region": "World:Ukraine", },
         { "name": "World:United Kingdom:Confirmed", "key": "Confirmed", "region": "World:United Kingdom" },
         { "name": "World:United Kingdom:Deaths", "key": "Deaths", "region": "World:United Kingdom", },
         { "name": "World:Uruguay:Confirmed", "key": "Confirmed", "region": "World:Uruguay" },
         { "name": "World:Uruguay:Deaths", "key": "Deaths", "region": "World:Uruguay", },
+        { "name": "World:Vietnam:Confirmed", "key": "Confirmed", "region": "World:Vietnam" },
+        { "name": "World:Vietnam:Deaths", "key": "Deaths", "region": "World:Vietnam", },
         { "name": "World:US:Confirmed", "key": "Confirmed", "region": "World:US" },
         { "name": "World:US:Deaths", "key": "Deaths", "region": "World:US", },
         { "name": "World:US:AK:Confirmed", "key": "Confirmed", "region": "World:US:AK" },
@@ -684,6 +708,10 @@
         { "name": "World:Colombia:Confirmed 7-Day", "filter": "7-day", "source": "World:Colombia:Confirmed Daily" },
         { "name": "World:Colombia:Deaths Daily",  "filter": "daily", "source": "World:Colombia:Deaths" },
         { "name": "World:Colombia:Deaths 7-Day", "filter": "7-day", "source": "World:Colombia:Deaths Daily" },
+        { "name": "World:Czechia:Confirmed Daily", "filter": "daily", "source": "World:Czechia:Confirmed" },
+        { "name": "World:Czechia:Confirmed 7-Day", "filter": "7-day", "source": "World:Czechia:Confirmed Daily" },
+        { "name": "World:Czechia:Deaths Daily",  "filter": "daily", "source": "World:Czechia:Deaths" },
+        { "name": "World:Czechia:Deaths 7-Day", "filter": "7-day", "source": "World:Czechia:Deaths Daily" },
         { "name": "World:Denmark:Confirmed Daily", "filter": "daily", "source": "World:Denmark:Confirmed" },
         { "name": "World:Denmark:Confirmed 7-Day", "filter": "7-day", "source": "World:Denmark:Confirmed Daily" },
         { "name": "World:Denmark:Deaths Daily",  "filter": "daily", "source": "World:Denmark:Deaths" },
@@ -776,10 +804,22 @@
         { "name": "World:Liberia:Confirmed 7-Day", "filter": "7-day", "source": "World:Liberia:Confirmed Daily" },
         { "name": "World:Liberia:Deaths Daily",  "filter": "daily", "source": "World:Liberia:Deaths" },
         { "name": "World:Liberia:Deaths 7-Day", "filter": "7-day", "source": "World:Liberia:Deaths Daily" },
+        { "name": "World:Malaysia:Confirmed Daily", "filter": "daily", "source": "World:Malaysia:Confirmed" },
+        { "name": "World:Malaysia:Confirmed 7-Day", "filter": "7-day", "source": "World:Malaysia:Confirmed Daily" },
+        { "name": "World:Malaysia:Deaths Daily",  "filter": "daily", "source": "World:Malaysia:Deaths" },
+        { "name": "World:Malaysia:Deaths 7-Day", "filter": "7-day", "source": "World:Malaysia:Deaths Daily" },
         { "name": "World:Mexico:Confirmed Daily", "filter": "daily", "source": "World:Mexico:Confirmed" },
         { "name": "World:Mexico:Confirmed 7-Day", "filter": "7-day", "source": "World:Mexico:Confirmed Daily" },
         { "name": "World:Mexico:Deaths Daily",  "filter": "daily", "source": "World:Mexico:Deaths" },
         { "name": "World:Mexico:Deaths 7-Day", "filter": "7-day", "source": "World:Mexico:Deaths Daily" },
+        { "name": "World:Myanmar:Confirmed Daily", "filter": "daily", "source": "World:Myanmar:Confirmed" },
+        { "name": "World:Myanmar:Confirmed 7-Day", "filter": "7-day", "source": "World:Myanmar:Confirmed Daily" },
+        { "name": "World:Myanmar:Deaths Daily",  "filter": "daily", "source": "World:Myanmar:Deaths" },
+        { "name": "World:Myanmar:Deaths 7-Day", "filter": "7-day", "source": "World:Myanmar:Deaths Daily" },
+        { "name": "World:Netherlands:Confirmed Daily", "filter": "daily", "source": "World:Netherlands:Confirmed" },
+        { "name": "World:Netherlands:Confirmed 7-Day", "filter": "7-day", "source": "World:Netherlands:Confirmed Daily" },
+        { "name": "World:Netherlands:Deaths Daily",  "filter": "daily", "source": "World:Netherlands:Deaths" },
+        { "name": "World:Netherlands:Deaths 7-Day", "filter": "7-day", "source": "World:Netherlands:Deaths Daily" },
         { "name": "World:Nepal:Confirmed Daily", "filter": "daily", "source": "World:Nepal:Confirmed" },
         { "name": "World:Nepal:Confirmed 7-Day", "filter": "7-day", "source": "World:Nepal:Confirmed Daily" },
         { "name": "World:Nepal:Deaths Daily",  "filter": "daily", "source": "World:Nepal:Deaths" },
@@ -812,10 +852,18 @@
         { "name": "World:Philippines:Confirmed 7-Day", "filter": "7-day", "source": "World:Philippines:Confirmed Daily" },
         { "name": "World:Philippines:Deaths Daily",  "filter": "daily", "source": "World:Philippines:Deaths" },
         { "name": "World:Philippines:Deaths 7-Day", "filter": "7-day", "source": "World:Philippines:Deaths Daily" },
+        { "name": "World:Poland:Confirmed Daily", "filter": "daily", "source": "World:Poland:Confirmed" },
+        { "name": "World:Poland:Confirmed 7-Day", "filter": "7-day", "source": "World:Poland:Confirmed Daily" },
+        { "name": "World:Poland:Deaths Daily",  "filter": "daily", "source": "World:Poland:Deaths" },
+        { "name": "World:Poland:Deaths 7-Day", "filter": "7-day", "source": "World:Poland:Deaths Daily" },
         { "name": "World:Qatar:Confirmed Daily", "filter": "daily", "source": "World:Qatar:Confirmed" },
         { "name": "World:Qatar:Confirmed 7-Day", "filter": "7-day", "source": "World:Qatar:Confirmed Daily" },
         { "name": "World:Qatar:Deaths Daily",  "filter": "daily", "source": "World:Qatar:Deaths" },
         { "name": "World:Qatar:Deaths 7-Day", "filter": "7-day", "source": "World:Qatar:Deaths Daily" },
+        { "name": "World:Romania:Confirmed Daily", "filter": "daily", "source": "World:Romania:Confirmed" },
+        { "name": "World:Romania:Confirmed 7-Day", "filter": "7-day", "source": "World:Romania:Confirmed Daily" },
+        { "name": "World:Romania:Deaths Daily",  "filter": "daily", "source": "World:Romania:Deaths" },
+        { "name": "World:Romania:Deaths 7-Day", "filter": "7-day", "source": "World:Romania:Deaths Daily" },
         { "name": "World:Russia:Confirmed Daily", "filter": "daily", "source": "World:Russia:Confirmed" },
         { "name": "World:Russia:Confirmed 7-Day", "filter": "7-day", "source": "World:Russia:Confirmed Daily" },
         { "name": "World:Russia:Deaths Daily",  "filter": "daily", "source": "World:Russia:Deaths" },
@@ -868,6 +916,10 @@
         { "name": "World:Turkey:Confirmed 7-Day", "filter": "7-day", "source": "World:Turkey:Confirmed Daily" },
         { "name": "World:Turkey:Deaths Daily",  "filter": "daily", "source": "World:Turkey:Deaths" },
         { "name": "World:Turkey:Deaths 7-Day", "filter": "7-day", "source": "World:Turkey:Deaths Daily" },
+        { "name": "World:Ukraine:Confirmed Daily", "filter": "daily", "source": "World:Ukraine:Confirmed" },
+        { "name": "World:Ukraine:Confirmed 7-Day", "filter": "7-day", "source": "World:Ukraine:Confirmed Daily" },
+        { "name": "World:Ukraine:Deaths Daily",  "filter": "daily", "source": "World:Ukraine:Deaths" },
+        { "name": "World:Ukraine:Deaths 7-Day", "filter": "7-day", "source": "World:Ukraine:Deaths Daily" },
         { "name": "World:United Kingdom:Confirmed Daily", "filter": "daily", "source": "World:United Kingdom:Confirmed" },
         { "name": "World:United Kingdom:Confirmed 7-Day", "filter": "7-day", "source": "World:United Kingdom:Confirmed Daily" },
         { "name": "World:United Kingdom:Deaths Daily",  "filter": "daily", "source": "World:United Kingdom:Deaths" },
@@ -876,6 +928,10 @@
         { "name": "World:Uruguay:Confirmed 7-Day", "filter": "7-day", "source": "World:Uruguay:Confirmed Daily" },
         { "name": "World:Uruguay:Deaths Daily",  "filter": "daily", "source": "World:Uruguay:Deaths" },
         { "name": "World:Uruguay:Deaths 7-Day", "filter": "7-day", "source": "World:Uruguay:Deaths Daily" },
+        { "name": "World:Vietnam:Confirmed Daily", "filter": "daily", "source": "World:Vietnam:Confirmed" },
+        { "name": "World:Vietnam:Confirmed 7-Day", "filter": "7-day", "source": "World:Vietnam:Confirmed Daily" },
+        { "name": "World:Vietnam:Deaths Daily",  "filter": "daily", "source": "World:Vietnam:Deaths" },
+        { "name": "World:Vietnam:Deaths 7-Day", "filter": "7-day", "source": "World:Vietnam:Deaths Daily" },
         { "name": "World:US:Confirmed Daily", "filter": "daily", "source": "World:US:Confirmed" },
         { "name": "World:US:Confirmed 7-Day", "filter": "7-day", "source": "World:US:Confirmed Daily" },
         { "name": "World:US:Deaths Daily",  "filter": "daily", "source": "World:US:Deaths" },
@@ -1612,6 +1668,17 @@
             ],
         },
         {
+            "name": "World:Czechia",
+            "queries": [
+                "World:Czechia:Confirmed",
+                "World:Czechia:Confirmed Daily",
+                "World:Czechia:Confirmed 7-Day",
+                "World:Czechia:Deaths",
+                "World:Czechia:Deaths Daily",
+                "World:Czechia:Deaths 7-Day",
+            ],
+        },
+        {
             "name": "World:Denmark",
             "queries": [
                 "World:Denmark:Confirmed",
@@ -1865,6 +1932,17 @@
             ],
         },
         {
+            "name": "World:Malaysia",
+            "queries": [
+                "World:Malaysia:Confirmed",
+                "World:Malaysia:Confirmed Daily",
+                "World:Malaysia:Confirmed 7-Day",
+                "World:Malaysia:Deaths",
+                "World:Malaysia:Deaths Daily",
+                "World:Malaysia:Deaths 7-Day",
+            ],
+        },
+        {
             "name": "World:Mexico",
             "queries": [
                 "World:Mexico:Confirmed",
@@ -1873,6 +1951,28 @@
                 "World:Mexico:Deaths",
                 "World:Mexico:Deaths Daily",
                 "World:Mexico:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Myanmar",
+            "queries": [
+                "World:Myanmar:Confirmed",
+                "World:Myanmar:Confirmed Daily",
+                "World:Myanmar:Confirmed 7-Day",
+                "World:Myanmar:Deaths",
+                "World:Myanmar:Deaths Daily",
+                "World:Myanmar:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Netherlands",
+            "queries": [
+                "World:Netherlands:Confirmed",
+                "World:Netherlands:Confirmed Daily",
+                "World:Netherlands:Confirmed 7-Day",
+                "World:Netherlands:Deaths",
+                "World:Netherlands:Deaths Daily",
+                "World:Netherlands:Deaths 7-Day",
             ],
         },
         {
@@ -1964,6 +2064,17 @@
             ],
         },
         {
+            "name": "World:Poland",
+            "queries": [
+                "World:Poland:Confirmed",
+                "World:Poland:Confirmed Daily",
+                "World:Poland:Confirmed 7-Day",
+                "World:Poland:Deaths",
+                "World:Poland:Deaths Daily",
+                "World:Poland:Deaths 7-Day",
+            ],
+        },
+        {
             "name": "World:Qatar",
             "queries": [
                 "World:Qatar:Confirmed",
@@ -1972,6 +2083,17 @@
                 "World:Qatar:Deaths",
                 "World:Qatar:Deaths Daily",
                 "World:Qatar:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Romania",
+            "queries": [
+                "World:Romania:Confirmed",
+                "World:Romania:Confirmed Daily",
+                "World:Romania:Confirmed 7-Day",
+                "World:Romania:Deaths",
+                "World:Romania:Deaths Daily",
+                "World:Romania:Deaths 7-Day",
             ],
         },
         {
@@ -2118,6 +2240,17 @@
             ],
         },
         {
+            "name": "World:Ukraine",
+            "queries": [
+                "World:Ukraine:Confirmed",
+                "World:Ukraine:Confirmed Daily",
+                "World:Ukraine:Confirmed 7-Day",
+                "World:Ukraine:Deaths",
+                "World:Ukraine:Deaths Daily",
+                "World:Ukraine:Deaths 7-Day",
+            ],
+        },
+        {
             "name": "World:United Kingdom",
             "queries": [
                 "World:United Kingdom:Confirmed",
@@ -2137,6 +2270,17 @@
                 "World:Uruguay:Deaths",
                 "World:Uruguay:Deaths Daily",
                 "World:Uruguay:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "World:Vietnam",
+            "queries": [
+                "World:Vietnam:Confirmed",
+                "World:Vietnam:Confirmed Daily",
+                "World:Vietnam:Confirmed 7-Day",
+                "World:Vietnam:Deaths",
+                "World:Vietnam:Deaths Daily",
+                "World:Vietnam:Deaths 7-Day",
             ],
         },
         {
@@ -3869,6 +4013,10 @@
             "table": "World:Colombia"
         },
         {
+            "document_path": "time-series/World/entities/Czechia",
+            "table": "World:Czechia"
+        },
+        {
             "document_path": "time-series/World/entities/Denmark",
             "table": "World:Denmark"
         },
@@ -3961,8 +4109,20 @@
             "table": "World:Liberia"
         },
         {
+            "document_path": "time-series/World/entities/Malaysia",
+            "table": "World:Malaysia"
+        },
+        {
             "document_path": "time-series/World/entities/Mexico",
             "table": "World:Mexico"
+        },
+        {
+            "document_path": "time-series/World/entities/Myanmar",
+            "table": "World:Myanmar"
+        },
+        {
+            "document_path": "time-series/World/entities/Netherlands",
+            "table": "World:Netherlands"
         },
         {
             "document_path": "time-series/World/entities/Nepal",
@@ -3997,8 +4157,16 @@
             "table": "World:Philippines"
         },
         {
+            "document_path": "time-series/World/entities/Poland",
+            "table": "World:Poland"
+        },
+        {
             "document_path": "time-series/World/entities/Qatar",
             "table": "World:Qatar"
+        },
+        {
+            "document_path": "time-series/World/entities/Romania",
+            "table": "World:Romania"
         },
         {
             "document_path": "time-series/World/entities/Russia",
@@ -4053,12 +4221,20 @@
             "table": "World:Turkey"
         },
         {
+            "document_path": "time-series/World/entities/Ukraine",
+            "table": "World:Ukraine"
+        },
+        {
             "document_path": "time-series/World/entities/United Kingdom",
             "table": "World:United Kingdom"
         },
         {
             "document_path": "time-series/World/entities/Uruguay",
             "table": "World:Uruguay"
+        },
+        {
+            "document_path": "time-series/World/entities/Vietnam",
+            "table": "World:Vietnam"
         },
         {
             "document_path": "time-series/World/entities/US",
