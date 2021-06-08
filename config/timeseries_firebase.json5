@@ -22,7 +22,6 @@
         { "name": "World:Germany", "include": [ "Germany" ] },
         { "name": "World:Ghana", "include": [ "Ghana" ] },
         { "name": "World:Greece", "include": [ "Greece" ] },
-        { "name": "World:Hong Kong", "include": [ "Hong Kong" ] },
         { "name": "World:Japan", "include": [ "Japan" ] },
         { "name": "World:Jordan", "include": [ "Jordan" ] },
         { "name": "World:India", "include": [ "India" ] },
@@ -41,7 +40,6 @@
         { "name": "World:Netherlands", "include": [ "Netherlands" ] },
         { "name": "World:Nepal", "include": [ "Nepal" ] },
         { "name": "World:New Zealand", "include": [ "New Zealand" ] },
-        { "name": "World:North Ireland", "include": [ "North Ireland" ] },
         { "name": "World:Norway", "include": [ "Norway" ] },
         { "name": "World:Pakistan", "include": [ "Pakistan" ] },
         { "name": "World:Paraguay", "include": [ "Paraguay" ] },
@@ -266,8 +264,6 @@
         { "name": "World:Ghana:Deaths", "key": "Deaths", "region": "World:Ghana", },
         { "name": "World:Greece:Confirmed", "key": "Confirmed", "region": "World:Greece" },
         { "name": "World:Greece:Deaths", "key": "Deaths", "region": "World:Greece", },
-        { "name": "World:Hong Kong:Confirmed", "key": "Confirmed", "region": "World:Hong Kong" },
-        { "name": "World:Hong Kong:Deaths", "key": "Deaths", "region": "World:Hong Kong", },
         { "name": "World:Japan:Confirmed", "key": "Confirmed", "region": "World:Japan" },
         { "name": "World:Japan:Deaths", "key": "Deaths", "region": "World:Japan", },
         { "name": "World:Jordan:Confirmed", "key": "Confirmed", "region": "World:Jordan" },
@@ -304,8 +300,6 @@
         { "name": "World:Nepal:Deaths", "key": "Deaths", "region": "World:Nepal", },
         { "name": "World:New Zealand:Confirmed", "key": "Confirmed", "region": "World:New Zealand" },
         { "name": "World:New Zealand:Deaths", "key": "Deaths", "region": "World:New Zealand", },
-        { "name": "World:North Ireland:Confirmed", "key": "Confirmed", "region": "World:North Ireland" },
-        { "name": "World:North Ireland:Deaths", "key": "Deaths", "region": "World:North Ireland", },
         { "name": "World:Norway:Confirmed", "key": "Confirmed", "region": "World:Norway" },
         { "name": "World:Norway:Deaths", "key": "Deaths", "region": "World:Norway", },
         { "name": "World:Pakistan:Confirmed", "key": "Confirmed", "region": "World:Pakistan" },
@@ -752,10 +746,6 @@
         { "name": "World:Greece:Confirmed 7-Day", "filter": "7-day", "source": "World:Greece:Confirmed Daily" },
         { "name": "World:Greece:Deaths Daily",  "filter": "daily", "source": "World:Greece:Deaths" },
         { "name": "World:Greece:Deaths 7-Day", "filter": "7-day", "source": "World:Greece:Deaths Daily" },
-        { "name": "World:Hong Kong:Confirmed Daily", "filter": "daily", "source": "World:Hong Kong:Confirmed" },
-        { "name": "World:Hong Kong:Confirmed 7-Day", "filter": "7-day", "source": "World:Hong Kong:Confirmed Daily" },
-        { "name": "World:Hong Kong:Deaths Daily",  "filter": "daily", "source": "World:Hong Kong:Deaths" },
-        { "name": "World:Hong Kong:Deaths 7-Day", "filter": "7-day", "source": "World:Hong Kong:Deaths Daily" },
         { "name": "World:Japan:Confirmed Daily", "filter": "daily", "source": "World:Japan:Confirmed" },
         { "name": "World:Japan:Confirmed 7-Day", "filter": "7-day", "source": "World:Japan:Confirmed Daily" },
         { "name": "World:Japan:Deaths Daily",  "filter": "daily", "source": "World:Japan:Deaths" },
@@ -828,10 +818,6 @@
         { "name": "World:New Zealand:Confirmed 7-Day", "filter": "7-day", "source": "World:New Zealand:Confirmed Daily" },
         { "name": "World:New Zealand:Deaths Daily",  "filter": "daily", "source": "World:New Zealand:Deaths" },
         { "name": "World:New Zealand:Deaths 7-Day", "filter": "7-day", "source": "World:New Zealand:Deaths Daily" },
-        { "name": "World:North Ireland:Confirmed Daily", "filter": "daily", "source": "World:North Ireland:Confirmed" },
-        { "name": "World:North Ireland:Confirmed 7-Day", "filter": "7-day", "source": "World:North Ireland:Confirmed Daily" },
-        { "name": "World:North Ireland:Deaths Daily",  "filter": "daily", "source": "World:North Ireland:Deaths" },
-        { "name": "World:North Ireland:Deaths 7-Day", "filter": "7-day", "source": "World:North Ireland:Deaths Daily" },
         { "name": "World:Norway:Confirmed Daily", "filter": "daily", "source": "World:Norway:Confirmed" },
         { "name": "World:Norway:Confirmed 7-Day", "filter": "7-day", "source": "World:Norway:Confirmed Daily" },
         { "name": "World:Norway:Deaths Daily",  "filter": "daily", "source": "World:Norway:Deaths" },
@@ -1789,17 +1775,6 @@
             ],
         },
         {
-            "name": "World:Hong Kong",
-            "queries": [
-                "World:Hong Kong:Confirmed",
-                "World:Hong Kong:Confirmed Daily",
-                "World:Hong Kong:Confirmed 7-Day",
-                "World:Hong Kong:Deaths",
-                "World:Hong Kong:Deaths Daily",
-                "World:Hong Kong:Deaths 7-Day",
-            ],
-        },
-        {
             "name": "World:Japan",
             "queries": [
                 "World:Japan:Confirmed",
@@ -1995,17 +1970,6 @@
                 "World:New Zealand:Deaths",
                 "World:New Zealand:Deaths Daily",
                 "World:New Zealand:Deaths 7-Day",
-            ],
-        },
-        {
-            "name": "World:North Ireland",
-            "queries": [
-                "World:North Ireland:Confirmed",
-                "World:North Ireland:Confirmed Daily",
-                "World:North Ireland:Confirmed 7-Day",
-                "World:North Ireland:Deaths",
-                "World:North Ireland:Deaths Daily",
-                "World:North Ireland:Deaths 7-Day",
             ],
         },
         {
@@ -4057,10 +4021,6 @@
             "table": "World:Greece"
         },
         {
-            "document_path": "time-series/World/entities/Hong Kong",
-            "table": "World:Hong Kong"
-        },
-        {
             "document_path": "time-series/World/entities/Japan",
             "table": "World:Japan"
         },
@@ -4131,10 +4091,6 @@
         {
             "document_path": "time-series/World/entities/New Zealand",
             "table": "World:New Zealand"
-        },
-        {
-            "document_path": "time-series/World/entities/North Ireland",
-            "table": "World:North Ireland"
         },
         {
             "document_path": "time-series/World/entities/Norway",
