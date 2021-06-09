@@ -129,8 +129,17 @@ def write_firebase_entity_tree(root, verbose):
     write_firebase_entity(root, verbose)
 
 
+def write_firebase_timestamp(document_path):
+    timestamp_value = datetime.datetime.now(datetime.timezone.utc)
+    document_dict = {'timestamp': timestamp_value}
+    WriteFirebaseDocument(document_path, document_dict)
+
+
 def write_firebase_entities(firebase_outputs, tables, verbose):
     if verbose:
         print('Writing data to firebase')
     entity_tree = build_firebase_entity_tree(firebase_outputs, tables, verbose)
     write_firebase_entity_tree(entity_tree, verbose)
+
+    timestamp_path = '/'.join([entity_tree.path[0], 'Timestamp'])
+    write_firebase_timestamp(timestamp_path)
