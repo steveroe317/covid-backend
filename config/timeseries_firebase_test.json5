@@ -1,0 +1,276 @@
+{
+    "regions": [
+        { "name": "Test", "include": [ "" ] },
+        { "name": "Test:Brazil", "include": [ "Brazil" ] },
+        { "name": "Test:India", "include": [ "India" ] },
+        { "name": "Test:Israel", "include": [ "Israel" ] },
+        { "name": "Test:United Kingdom", "include": [ "United Kingdom" ] },
+        { "name": "Test:US", "include": [ "US" ] },
+        { "name": "Test:US:CA", "include": [ "US:CA" ] },
+        { "name": "Test:US:WA", "include": [ "US:WA" ] },
+        { "name": "Test:US:WA:King", "include": [ "US:WA:King" ] },
+        { "name": "Test:US:WA:Snohomish", "include": [ "US:WA:Snohomish" ] },
+        { "name": "Test:US:WA:Spokane", "include": [ "US:WA:Spokane" ] },
+        { "name": "Test:US:WA:Yakima", "include": [ "US:WA:Yakima" ] },
+    ],
+    "region_queries": [
+        { "name": "Test:Confirmed", "key": "Confirmed", "region": "Test" },
+        { "name": "Test:Deaths", "key": "Deaths", "region": "Test", },
+        { "name": "Test:Brazil:Confirmed", "key": "Confirmed", "region": "Test:Brazil" },
+        { "name": "Test:Brazil:Deaths", "key": "Deaths", "region": "Test:Brazil", },
+        { "name": "Test:India:Confirmed", "key": "Confirmed", "region": "Test:India" },
+        { "name": "Test:India:Deaths", "key": "Deaths", "region": "Test:India", },
+        { "name": "Test:Israel:Confirmed", "key": "Confirmed", "region": "Test:Israel" },
+        { "name": "Test:Israel:Deaths", "key": "Deaths", "region": "Test:Israel", },
+        { "name": "Test:United Kingdom:Confirmed", "key": "Confirmed", "region": "Test:United Kingdom" },
+        { "name": "Test:United Kingdom:Deaths", "key": "Deaths", "region": "Test:United Kingdom", },
+        { "name": "Test:US:Confirmed", "key": "Confirmed", "region": "Test:US" },
+        { "name": "Test:US:Deaths", "key": "Deaths", "region": "Test:US", },
+        { "name": "Test:US:CA:Confirmed", "key": "Confirmed", "region": "Test:US:CA" },
+        { "name": "Test:US:CA:Deaths", "key": "Deaths", "region": "Test:US:CA", },
+        { "name": "Test:US:WA:Confirmed", "key": "Confirmed", "region": "Test:US:WA" },
+        { "name": "Test:US:WA:Deaths", "key": "Deaths", "region": "Test:US:WA", },
+        { "name": "Test:US:WA:King:Confirmed", "key": "Confirmed", "region": "Test:US:WA:King" },
+        { "name": "Test:US:WA:King:Deaths", "key": "Deaths", "region": "Test:US:WA:King", },
+        { "name": "Test:US:WA:Snohomish:Confirmed", "key": "Confirmed", "region": "Test:US:WA:Snohomish" },
+        { "name": "Test:US:WA:Snohomish:Deaths", "key": "Deaths", "region": "Test:US:WA:Snohomish", },
+        { "name": "Test:US:WA:Spokane:Confirmed", "key": "Confirmed", "region": "Test:US:WA:Spokane" },
+        { "name": "Test:US:WA:Spokane:Deaths", "key": "Deaths", "region": "Test:US:WA:Spokane", },
+        { "name": "Test:US:WA:Yakima:Confirmed", "key": "Confirmed", "region": "Test:US:WA:Yakima" },
+        { "name": "Test:US:WA:Yakima:Deaths", "key": "Deaths", "region": "Test:US:WA:Yakima", },
+    ],
+    "filtered_queries": [
+        { "name": "Test:Confirmed Daily", "filter": "daily", "source": "Test:Confirmed" },
+        { "name": "Test:Confirmed 7-Day", "filter": "7-day", "source": "Test:Confirmed Daily" },
+        { "name": "Test:Deaths Daily",  "filter": "daily", "source": "Test:Deaths" },
+        { "name": "Test:Deaths 7-Day", "filter": "7-day", "source": "Test:Deaths Daily" },
+        { "name": "Test:Brazil:Confirmed Daily", "filter": "daily", "source": "Test:Brazil:Confirmed" },
+        { "name": "Test:Brazil:Confirmed 7-Day", "filter": "7-day", "source": "Test:Brazil:Confirmed Daily" },
+        { "name": "Test:Brazil:Deaths Daily",  "filter": "daily", "source": "Test:Brazil:Deaths" },
+        { "name": "Test:Brazil:Deaths 7-Day", "filter": "7-day", "source": "Test:Brazil:Deaths Daily" },
+        { "name": "Test:India:Confirmed Daily", "filter": "daily", "source": "Test:India:Confirmed" },
+        { "name": "Test:India:Confirmed 7-Day", "filter": "7-day", "source": "Test:India:Confirmed Daily" },
+        { "name": "Test:India:Deaths Daily",  "filter": "daily", "source": "Test:India:Deaths" },
+        { "name": "Test:India:Deaths 7-Day", "filter": "7-day", "source": "Test:India:Deaths Daily" },
+        { "name": "Test:Israel:Confirmed Daily", "filter": "daily", "source": "Test:Israel:Confirmed" },
+        { "name": "Test:Israel:Confirmed 7-Day", "filter": "7-day", "source": "Test:Israel:Confirmed Daily" },
+        { "name": "Test:Israel:Deaths Daily",  "filter": "daily", "source": "Test:Israel:Deaths" },
+        { "name": "Test:Israel:Deaths 7-Day", "filter": "7-day", "source": "Test:Israel:Deaths Daily" },
+        { "name": "Test:United Kingdom:Confirmed Daily", "filter": "daily", "source": "Test:United Kingdom:Confirmed" },
+        { "name": "Test:United Kingdom:Confirmed 7-Day", "filter": "7-day", "source": "Test:United Kingdom:Confirmed Daily" },
+        { "name": "Test:United Kingdom:Deaths Daily",  "filter": "daily", "source": "Test:United Kingdom:Deaths" },
+        { "name": "Test:United Kingdom:Deaths 7-Day", "filter": "7-day", "source": "Test:United Kingdom:Deaths Daily" },
+        { "name": "Test:US:Confirmed Daily", "filter": "daily", "source": "Test:US:Confirmed" },
+        { "name": "Test:US:Confirmed 7-Day", "filter": "7-day", "source": "Test:US:Confirmed Daily" },
+        { "name": "Test:US:Deaths Daily",  "filter": "daily", "source": "Test:US:Deaths" },
+        { "name": "Test:US:Deaths 7-Day", "filter": "7-day", "source": "Test:US:Deaths Daily" },
+        { "name": "Test:US:CA:Confirmed Daily", "filter": "daily", "source": "Test:US:CA:Confirmed" },
+        { "name": "Test:US:CA:Confirmed 7-Day", "filter": "7-day", "source": "Test:US:CA:Confirmed Daily" },
+        { "name": "Test:US:CA:Deaths Daily",  "filter": "daily", "source": "Test:US:CA:Deaths" },
+        { "name": "Test:US:CA:Deaths 7-Day", "filter": "7-day", "source": "Test:US:CA:Deaths Daily" },
+        { "name": "Test:US:WA:Confirmed Daily", "filter": "daily", "source": "Test:US:WA:Confirmed" },
+        { "name": "Test:US:WA:Confirmed 7-Day", "filter": "7-day", "source": "Test:US:WA:Confirmed Daily" },
+        { "name": "Test:US:WA:Deaths Daily",  "filter": "daily", "source": "Test:US:WA:Deaths" },
+        { "name": "Test:US:WA:Deaths 7-Day", "filter": "7-day", "source": "Test:US:WA:Deaths Daily" },
+        { "name": "Test:US:WA:King:Confirmed Daily", "filter": "daily", "source": "Test:US:WA:King:Confirmed" },
+        { "name": "Test:US:WA:King:Confirmed 7-Day", "filter": "7-day", "source": "Test:US:WA:King:Confirmed Daily" },
+        { "name": "Test:US:WA:King:Deaths Daily",  "filter": "daily", "source": "Test:US:WA:King:Deaths" },
+        { "name": "Test:US:WA:King:Deaths 7-Day", "filter": "7-day", "source": "Test:US:WA:King:Deaths Daily" },
+        { "name": "Test:US:WA:Snohomish:Confirmed Daily", "filter": "daily", "source": "Test:US:WA:Snohomish:Confirmed" },
+        { "name": "Test:US:WA:Snohomish:Confirmed 7-Day", "filter": "7-day", "source": "Test:US:WA:Snohomish:Confirmed Daily" },
+        { "name": "Test:US:WA:Snohomish:Deaths Daily",  "filter": "daily", "source": "Test:US:WA:Snohomish:Deaths" },
+        { "name": "Test:US:WA:Snohomish:Deaths 7-Day", "filter": "7-day", "source": "Test:US:WA:Snohomish:Deaths Daily" },
+        { "name": "Test:US:WA:Spokane:Confirmed Daily", "filter": "daily", "source": "Test:US:WA:Spokane:Confirmed" },
+        { "name": "Test:US:WA:Spokane:Confirmed 7-Day", "filter": "7-day", "source": "Test:US:WA:Spokane:Confirmed Daily" },
+        { "name": "Test:US:WA:Spokane:Deaths Daily",  "filter": "daily", "source": "Test:US:WA:Spokane:Deaths" },
+        { "name": "Test:US:WA:Spokane:Deaths 7-Day", "filter": "7-day", "source": "Test:US:WA:Spokane:Deaths Daily" },
+        { "name": "Test:US:WA:Yakima:Confirmed Daily", "filter": "daily", "source": "Test:US:WA:Yakima:Confirmed" },
+        { "name": "Test:US:WA:Yakima:Confirmed 7-Day", "filter": "7-day", "source": "Test:US:WA:Yakima:Confirmed Daily" },
+        { "name": "Test:US:WA:Yakima:Deaths Daily",  "filter": "daily", "source": "Test:US:WA:Yakima:Deaths" },
+        { "name": "Test:US:WA:Yakima:Deaths 7-Day", "filter": "7-day", "source": "Test:US:WA:Yakima:Deaths Daily" },
+    ],
+    "report_tables": [
+        {
+            "name": "Test",
+            "queries": [
+                "Test:Confirmed",
+                "Test:Confirmed Daily",
+                "Test:Confirmed 7-Day",
+                "Test:Deaths",
+                "Test:Deaths Daily",
+                "Test:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Test:Brazil",
+            "queries": [
+                "Test:Brazil:Confirmed",
+                "Test:Brazil:Confirmed Daily",
+                "Test:Brazil:Confirmed 7-Day",
+                "Test:Brazil:Deaths",
+                "Test:Brazil:Deaths Daily",
+                "Test:Brazil:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Test:India",
+            "queries": [
+                "Test:India:Confirmed",
+                "Test:India:Confirmed Daily",
+                "Test:India:Confirmed 7-Day",
+                "Test:India:Deaths",
+                "Test:India:Deaths Daily",
+                "Test:India:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Test:Israel",
+            "queries": [
+                "Test:Israel:Confirmed",
+                "Test:Israel:Confirmed Daily",
+                "Test:Israel:Confirmed 7-Day",
+                "Test:Israel:Deaths",
+                "Test:Israel:Deaths Daily",
+                "Test:Israel:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Test:United Kingdom",
+            "queries": [
+                "Test:United Kingdom:Confirmed",
+                "Test:United Kingdom:Confirmed Daily",
+                "Test:United Kingdom:Confirmed 7-Day",
+                "Test:United Kingdom:Deaths",
+                "Test:United Kingdom:Deaths Daily",
+                "Test:United Kingdom:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Test:US",
+            "queries": [
+                "Test:US:Confirmed",
+                "Test:US:Confirmed Daily",
+                "Test:US:Confirmed 7-Day",
+                "Test:US:Deaths",
+                "Test:US:Deaths Daily",
+                "Test:US:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Test:US:CA",
+            "queries": [
+                "Test:US:CA:Confirmed",
+                "Test:US:CA:Confirmed Daily",
+                "Test:US:CA:Confirmed 7-Day",
+                "Test:US:CA:Deaths",
+                "Test:US:CA:Deaths Daily",
+                "Test:US:CA:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Test:US:WA",
+            "queries": [
+                "Test:US:WA:Confirmed",
+                "Test:US:WA:Confirmed Daily",
+                "Test:US:WA:Confirmed 7-Day",
+                "Test:US:WA:Deaths",
+                "Test:US:WA:Deaths Daily",
+                "Test:US:WA:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Test:US:WA:King",
+            "queries": [
+                "Test:US:WA:King:Confirmed",
+                "Test:US:WA:King:Confirmed Daily",
+                "Test:US:WA:King:Confirmed 7-Day",
+                "Test:US:WA:King:Deaths",
+                "Test:US:WA:King:Deaths Daily",
+                "Test:US:WA:King:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Test:US:WA:Snohomish",
+            "queries": [
+                "Test:US:WA:Snohomish:Confirmed",
+                "Test:US:WA:Snohomish:Confirmed Daily",
+                "Test:US:WA:Snohomish:Confirmed 7-Day",
+                "Test:US:WA:Snohomish:Deaths",
+                "Test:US:WA:Snohomish:Deaths Daily",
+                "Test:US:WA:Snohomish:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Test:US:WA:Spokane",
+            "queries": [
+                "Test:US:WA:Spokane:Confirmed",
+                "Test:US:WA:Spokane:Confirmed Daily",
+                "Test:US:WA:Spokane:Confirmed 7-Day",
+                "Test:US:WA:Spokane:Deaths",
+                "Test:US:WA:Spokane:Deaths Daily",
+                "Test:US:WA:Spokane:Deaths 7-Day",
+            ],
+        },
+        {
+            "name": "Test:US:WA:Yakima",
+            "queries": [
+                "Test:US:WA:Yakima:Confirmed",
+                "Test:US:WA:Yakima:Confirmed Daily",
+                "Test:US:WA:Yakima:Confirmed 7-Day",
+                "Test:US:WA:Yakima:Deaths",
+                "Test:US:WA:Yakima:Deaths Daily",
+                "Test:US:WA:Yakima:Deaths 7-Day",
+            ],
+        },
+    ],
+    "firebase_outputs": [
+        {
+            "document_path": "time-series/Test",
+            "table": "Test"
+        },
+        {
+            "document_path": "time-series/Test/entities/Brazil",
+            "table": "Test:Brazil"
+        },
+        {
+            "document_path": "time-series/Test/entities/India",
+            "table": "Test:India"
+        },
+        {
+            "document_path": "time-series/Test/entities/Israel",
+            "table": "Test:Israel"
+        },
+        {
+            "document_path": "time-series/Test/entities/United Kingdom",
+            "table": "Test:United Kingdom"
+        },
+        {
+            "document_path": "time-series/Test/entities/United States",
+            "table": "Test:US"
+        },
+        {
+            "document_path": "time-series/Test/entities/United States/entities/California",
+            "table": "Test:US:CA"
+        },
+        {
+            "document_path": "time-series/Test/entities/United States/entities/Washington",
+            "table": "Test:US:WA"
+        },
+        {
+            "document_path": "time-series/Test/entities/United States/entities/Washington/entities/King",
+            "table": "Test:US:WA:King"
+        },
+        {
+            "document_path": "time-series/Test/entities/United States/entities/Washington/entities/Snohomish",
+            "table": "Test:US:WA:Snohomish"
+        },
+        {
+            "document_path": "time-series/Test/entities/United States/entities/Washington/entities/Spokane",
+            "table": "Test:US:WA:Spokane"
+        },
+        {
+            "document_path": "time-series/Test/entities/United States/entities/Washington/entities/Yakima",
+            "table": "Test:US:WA:Yakima"
+        },
+    ],
+}
