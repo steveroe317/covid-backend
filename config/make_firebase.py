@@ -2,6 +2,9 @@
 
 import itertools
 import re
+import os
+import sys
+
 
 ROOT_COLLECTION = 'time-series'
 SUB_COLLECTION = 'entities'
@@ -294,6 +297,9 @@ FIREBASE_OUTPUT_TEMPLATE = """
 
 
 def main():
+    sys.path.append(os.path.join('..', 'scripts'))
+    from us_state_locations import us_states_to_state_names
+
     admin_codes = list(itertools.chain(
         WORLD, COUNTRIES, US_STATES, US_CA_COUNTIES, US_WA_COUNTIES))
 
@@ -323,6 +329,10 @@ def main():
     print(SECTION_HEADER_TEMPLATE.format(section='firebase_outputs'))
     for code in admin_codes:
         areas = code.split(':')
+        if len(areas) >= 2 and areas[1] == 'US':
+            areas[1] = 'United States'
+        if len(areas) >= 3 and areas[2] in us_states_to_state_names:
+            areas[2] = us_states_to_state_names[areas[2]]
         path_segments = []
         for index, area in enumerate(areas):
             path_segments.append(

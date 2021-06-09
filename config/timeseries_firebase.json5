@@ -4193,615 +4193,615 @@
             "table": "World:Vietnam"
         },
         {
-            "document_path": "time-series/World/entities/US",
+            "document_path": "time-series/World/entities/United States",
             "table": "World:US"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/AK",
+            "document_path": "time-series/World/entities/United States/entities/Alaska",
             "table": "World:US:AK"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/AL",
+            "document_path": "time-series/World/entities/United States/entities/Alabama",
             "table": "World:US:AL"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/AR",
+            "document_path": "time-series/World/entities/United States/entities/Arkansas",
             "table": "World:US:AR"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/AS",
+            "document_path": "time-series/World/entities/United States/entities/American Samoa",
             "table": "World:US:AS"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/AZ",
+            "document_path": "time-series/World/entities/United States/entities/Arizona",
             "table": "World:US:AZ"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA",
+            "document_path": "time-series/World/entities/United States/entities/California",
             "table": "World:US:CA"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CO",
+            "document_path": "time-series/World/entities/United States/entities/Colorado",
             "table": "World:US:CO"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CP",
+            "document_path": "time-series/World/entities/United States/entities/Northern Marina Islands",
             "table": "World:US:CP"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CT",
+            "document_path": "time-series/World/entities/United States/entities/Connecticut",
             "table": "World:US:CT"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/DC",
+            "document_path": "time-series/World/entities/United States/entities/District of Columbia",
             "table": "World:US:DC"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/DE",
+            "document_path": "time-series/World/entities/United States/entities/Delaware",
             "table": "World:US:DE"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/FL",
+            "document_path": "time-series/World/entities/United States/entities/Florida",
             "table": "World:US:FL"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/GA",
+            "document_path": "time-series/World/entities/United States/entities/Georgia",
             "table": "World:US:GA"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/GU",
+            "document_path": "time-series/World/entities/United States/entities/Guam",
             "table": "World:US:GU"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/HI",
+            "document_path": "time-series/World/entities/United States/entities/Hawaii",
             "table": "World:US:HI"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/IA",
+            "document_path": "time-series/World/entities/United States/entities/Iowa",
             "table": "World:US:IA"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/ID",
+            "document_path": "time-series/World/entities/United States/entities/Idaho",
             "table": "World:US:ID"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/IL",
+            "document_path": "time-series/World/entities/United States/entities/Illinois",
             "table": "World:US:IL"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/IN",
+            "document_path": "time-series/World/entities/United States/entities/Indiana",
             "table": "World:US:IN"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/KS",
+            "document_path": "time-series/World/entities/United States/entities/Kansas",
             "table": "World:US:KS"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/KY",
+            "document_path": "time-series/World/entities/United States/entities/Kentucky",
             "table": "World:US:KY"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/LA",
+            "document_path": "time-series/World/entities/United States/entities/Louisiana",
             "table": "World:US:LA"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/MA",
+            "document_path": "time-series/World/entities/United States/entities/Massachusetts",
             "table": "World:US:MA"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/MD",
+            "document_path": "time-series/World/entities/United States/entities/Maryland",
             "table": "World:US:MD"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/ME",
+            "document_path": "time-series/World/entities/United States/entities/Maine",
             "table": "World:US:ME"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/MI",
+            "document_path": "time-series/World/entities/United States/entities/Michigan",
             "table": "World:US:MI"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/MN",
+            "document_path": "time-series/World/entities/United States/entities/Minnesota",
             "table": "World:US:MN"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/MO",
+            "document_path": "time-series/World/entities/United States/entities/Missouri",
             "table": "World:US:MO"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/MS",
+            "document_path": "time-series/World/entities/United States/entities/Mississippi",
             "table": "World:US:MS"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/MT",
+            "document_path": "time-series/World/entities/United States/entities/Montana",
             "table": "World:US:MT"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/NC",
+            "document_path": "time-series/World/entities/United States/entities/North Carolina",
             "table": "World:US:NC"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/ND",
+            "document_path": "time-series/World/entities/United States/entities/North Dakota",
             "table": "World:US:ND"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/NE",
+            "document_path": "time-series/World/entities/United States/entities/Nebraska",
             "table": "World:US:NE"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/NH",
+            "document_path": "time-series/World/entities/United States/entities/New Hampshire",
             "table": "World:US:NH"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/NJ",
+            "document_path": "time-series/World/entities/United States/entities/New Jersey",
             "table": "World:US:NJ"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/NM",
+            "document_path": "time-series/World/entities/United States/entities/New Mexico",
             "table": "World:US:NM"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/NV",
+            "document_path": "time-series/World/entities/United States/entities/Nevada",
             "table": "World:US:NV"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/NY",
+            "document_path": "time-series/World/entities/United States/entities/New York",
             "table": "World:US:NY"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/OH",
+            "document_path": "time-series/World/entities/United States/entities/Ohio",
             "table": "World:US:OH"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/OK",
+            "document_path": "time-series/World/entities/United States/entities/Oklahoma",
             "table": "World:US:OK"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/OR",
+            "document_path": "time-series/World/entities/United States/entities/Oregon",
             "table": "World:US:OR"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/PA",
+            "document_path": "time-series/World/entities/United States/entities/Pennsylvania",
             "table": "World:US:PA"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/RI",
+            "document_path": "time-series/World/entities/United States/entities/Rhode Island",
             "table": "World:US:RI"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/SC",
+            "document_path": "time-series/World/entities/United States/entities/South Carolina",
             "table": "World:US:SC"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/SD",
+            "document_path": "time-series/World/entities/United States/entities/South Dakota",
             "table": "World:US:SD"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/TN",
+            "document_path": "time-series/World/entities/United States/entities/Tennessee",
             "table": "World:US:TN"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/TX",
+            "document_path": "time-series/World/entities/United States/entities/Texas",
             "table": "World:US:TX"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/UT",
+            "document_path": "time-series/World/entities/United States/entities/Utah",
             "table": "World:US:UT"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/VA",
+            "document_path": "time-series/World/entities/United States/entities/Virginia",
             "table": "World:US:VA"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/VI",
+            "document_path": "time-series/World/entities/United States/entities/U.S. Virgin Islands",
             "table": "World:US:VI"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/VT",
+            "document_path": "time-series/World/entities/United States/entities/Vermont",
             "table": "World:US:VT"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA",
+            "document_path": "time-series/World/entities/United States/entities/Washington",
             "table": "World:US:WA"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WI",
+            "document_path": "time-series/World/entities/United States/entities/Wisconsin",
             "table": "World:US:WI"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WV",
+            "document_path": "time-series/World/entities/United States/entities/West Virginia",
             "table": "World:US:WV"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WY",
+            "document_path": "time-series/World/entities/United States/entities/Wyoming",
             "table": "World:US:WY"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Alameda",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Alameda",
             "table": "World:US:CA:Alameda"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Alpine",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Alpine",
             "table": "World:US:CA:Alpine"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Amador",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Amador",
             "table": "World:US:CA:Amador"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Butte",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Butte",
             "table": "World:US:CA:Butte"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Calaveras",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Calaveras",
             "table": "World:US:CA:Calaveras"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Colusa",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Colusa",
             "table": "World:US:CA:Colusa"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Contra Costa",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Contra Costa",
             "table": "World:US:CA:Contra Costa"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Del Norte",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Del Norte",
             "table": "World:US:CA:Del Norte"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/El Dorado",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/El Dorado",
             "table": "World:US:CA:El Dorado"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Fresno",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Fresno",
             "table": "World:US:CA:Fresno"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Glenn",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Glenn",
             "table": "World:US:CA:Glenn"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Humboldt",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Humboldt",
             "table": "World:US:CA:Humboldt"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Imperial",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Imperial",
             "table": "World:US:CA:Imperial"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Inyo",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Inyo",
             "table": "World:US:CA:Inyo"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Kern",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Kern",
             "table": "World:US:CA:Kern"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Kings",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Kings",
             "table": "World:US:CA:Kings"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Lake",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Lake",
             "table": "World:US:CA:Lake"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Lassen",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Lassen",
             "table": "World:US:CA:Lassen"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Los Angeles",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Los Angeles",
             "table": "World:US:CA:Los Angeles"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Madera",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Madera",
             "table": "World:US:CA:Madera"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Marin",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Marin",
             "table": "World:US:CA:Marin"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Mariposa",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Mariposa",
             "table": "World:US:CA:Mariposa"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Mendocino",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Mendocino",
             "table": "World:US:CA:Mendocino"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Merced",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Merced",
             "table": "World:US:CA:Merced"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Modoc",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Modoc",
             "table": "World:US:CA:Modoc"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Mono",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Mono",
             "table": "World:US:CA:Mono"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Monterey",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Monterey",
             "table": "World:US:CA:Monterey"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Napa",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Napa",
             "table": "World:US:CA:Napa"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Nevada",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Nevada",
             "table": "World:US:CA:Nevada"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Orange",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Orange",
             "table": "World:US:CA:Orange"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Placer",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Placer",
             "table": "World:US:CA:Placer"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Plumas",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Plumas",
             "table": "World:US:CA:Plumas"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Riverside",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Riverside",
             "table": "World:US:CA:Riverside"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Sacramento",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Sacramento",
             "table": "World:US:CA:Sacramento"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/San Benito",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/San Benito",
             "table": "World:US:CA:San Benito"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/San Bernardino",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/San Bernardino",
             "table": "World:US:CA:San Bernardino"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/San Diego",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/San Diego",
             "table": "World:US:CA:San Diego"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/San Francisco",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/San Francisco",
             "table": "World:US:CA:San Francisco"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/San Joaquin",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/San Joaquin",
             "table": "World:US:CA:San Joaquin"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/San Luis Obispo",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/San Luis Obispo",
             "table": "World:US:CA:San Luis Obispo"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/San Mateo",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/San Mateo",
             "table": "World:US:CA:San Mateo"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Santa Barbara",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Santa Barbara",
             "table": "World:US:CA:Santa Barbara"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Santa Clara",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Santa Clara",
             "table": "World:US:CA:Santa Clara"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Santa Cruz",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Santa Cruz",
             "table": "World:US:CA:Santa Cruz"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Shasta",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Shasta",
             "table": "World:US:CA:Shasta"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Sierra",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Sierra",
             "table": "World:US:CA:Sierra"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Siskiyou",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Siskiyou",
             "table": "World:US:CA:Siskiyou"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Solano",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Solano",
             "table": "World:US:CA:Solano"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Sonoma",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Sonoma",
             "table": "World:US:CA:Sonoma"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Stanislaus",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Stanislaus",
             "table": "World:US:CA:Stanislaus"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Sutter",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Sutter",
             "table": "World:US:CA:Sutter"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Tehama",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Tehama",
             "table": "World:US:CA:Tehama"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Trinity",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Trinity",
             "table": "World:US:CA:Trinity"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Tulare",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Tulare",
             "table": "World:US:CA:Tulare"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Tuolumne",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Tuolumne",
             "table": "World:US:CA:Tuolumne"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Ventura",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Ventura",
             "table": "World:US:CA:Ventura"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Yolo",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Yolo",
             "table": "World:US:CA:Yolo"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/CA/entities/Yuba",
+            "document_path": "time-series/World/entities/United States/entities/California/entities/Yuba",
             "table": "World:US:CA:Yuba"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Adams",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Adams",
             "table": "World:US:WA:Adams"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Asotin",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Asotin",
             "table": "World:US:WA:Asotin"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Benton",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Benton",
             "table": "World:US:WA:Benton"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Chelan",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Chelan",
             "table": "World:US:WA:Chelan"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Clallam",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Clallam",
             "table": "World:US:WA:Clallam"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Clark",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Clark",
             "table": "World:US:WA:Clark"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Columbia",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Columbia",
             "table": "World:US:WA:Columbia"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Cowlitz",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Cowlitz",
             "table": "World:US:WA:Cowlitz"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Douglas",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Douglas",
             "table": "World:US:WA:Douglas"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Ferry",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Ferry",
             "table": "World:US:WA:Ferry"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Franklin",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Franklin",
             "table": "World:US:WA:Franklin"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Garfield",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Garfield",
             "table": "World:US:WA:Garfield"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Grant",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Grant",
             "table": "World:US:WA:Grant"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Greys Harbor",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Greys Harbor",
             "table": "World:US:WA:Greys Harbor"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Island",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Island",
             "table": "World:US:WA:Island"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Jefferson",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Jefferson",
             "table": "World:US:WA:Jefferson"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/King",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/King",
             "table": "World:US:WA:King"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Kitsap",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Kitsap",
             "table": "World:US:WA:Kitsap"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Kittitas",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Kittitas",
             "table": "World:US:WA:Kittitas"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Klickitat",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Klickitat",
             "table": "World:US:WA:Klickitat"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Lewis",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Lewis",
             "table": "World:US:WA:Lewis"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Lincoln",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Lincoln",
             "table": "World:US:WA:Lincoln"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Mason",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Mason",
             "table": "World:US:WA:Mason"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Okanogan",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Okanogan",
             "table": "World:US:WA:Okanogan"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Pacific",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Pacific",
             "table": "World:US:WA:Pacific"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Pend Oreille",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Pend Oreille",
             "table": "World:US:WA:Pend Oreille"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Pierce",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Pierce",
             "table": "World:US:WA:Pierce"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/San Juan",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/San Juan",
             "table": "World:US:WA:San Juan"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Skagit",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Skagit",
             "table": "World:US:WA:Skagit"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Skamania",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Skamania",
             "table": "World:US:WA:Skamania"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Snohomish",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Snohomish",
             "table": "World:US:WA:Snohomish"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Spokane",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Spokane",
             "table": "World:US:WA:Spokane"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Stevens",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Stevens",
             "table": "World:US:WA:Stevens"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Thurston",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Thurston",
             "table": "World:US:WA:Thurston"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Wahkiakum",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Wahkiakum",
             "table": "World:US:WA:Wahkiakum"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Walla Walla",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Walla Walla",
             "table": "World:US:WA:Walla Walla"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Whatcom",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Whatcom",
             "table": "World:US:WA:Whatcom"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Whitman",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Whitman",
             "table": "World:US:WA:Whitman"
         },
         {
-            "document_path": "time-series/World/entities/US/entities/WA/entities/Yakima",
+            "document_path": "time-series/World/entities/United States/entities/Washington/entities/Yakima",
             "table": "World:US:WA:Yakima"
         },
     ],
