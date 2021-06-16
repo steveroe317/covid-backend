@@ -123,6 +123,28 @@ def run_daily_filter(source):
     return daily_result
 
 
+def run_gap_fill_filter(source):
+    fill_result = {}
+    prev_value = 0
+    # Fill non-zero forward
+    for source_key in sorted(source.keys()):
+        value = source[source_key]
+        if value:
+            fill_result[source_key] = value
+            prev_value = value
+        else:
+            fill_result[source_key] = prev_value
+    # Fill non-zero backward
+    for source_key in reversed(sorted(source.keys())):
+        value = source[source_key]
+        if value:
+            fill_result[source_key] = value
+            prev_value = value
+        else:
+            fill_result[source_key] = prev_value
+    return fill_result
+
+
 def run_rolling_average_filter(source, window_size):
     rolling_average = {}
     rolling_sum = 0
@@ -141,6 +163,8 @@ def run_rolling_average_filter(source, window_size):
 def run_filtered_query(filter, source):
     if filter == 'daily':
         return run_daily_filter(source)
+    elif filter == 'gap-fill':
+        return run_gap_fill_filter(source)
     elif filter == '7-day':
         return run_rolling_average_filter(source, 7)
     else:

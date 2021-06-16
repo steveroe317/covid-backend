@@ -57,6 +57,7 @@ REGION_TEMPLATE = """
 QUERY_TEMPLATE = """
         {{ "name": "{code}:Confirmed", "key": "Confirmed", "region": "{code}" }},
         {{ "name": "{code}:Deaths", "key": "Deaths", "region": "{code}", }},
+        {{ "name": "{code}:Population Raw", "key": "Population", "region": "{code}", }},
 """[1:-1]
 
 FILTERED_QUERY_TEMPLATE = """
@@ -64,6 +65,7 @@ FILTERED_QUERY_TEMPLATE = """
         {{ "name": "{code}:Confirmed 7-Day", "filter": "7-day", "source": "{code}:Confirmed Daily" }},
         {{ "name": "{code}:Deaths Daily",  "filter": "daily", "source": "{code}:Deaths" }},
         {{ "name": "{code}:Deaths 7-Day", "filter": "7-day", "source": "{code}:Deaths Daily" }},
+        {{ "name": "{code}:Population", "filter": "gap-fill", "source": "{code}:Population Raw" }},
 """[1:-1]
 
 REPORT_TABLE_TEMPLATE = """
@@ -76,6 +78,7 @@ REPORT_TABLE_TEMPLATE = """
                 "{code}:Deaths",
                 "{code}:Deaths Daily",
                 "{code}:Deaths 7-Day",
+                "{code}:Population",
             ],
         }},
 """[1:-1]
