@@ -73,10 +73,8 @@ REPORT_TABLE_TEMPLATE = """
             "name": "{code}",
             "queries": [
                 "{code}:Confirmed",
-                "{code}:Confirmed Daily",
                 "{code}:Confirmed 7-Day",
                 "{code}:Deaths",
-                "{code}:Deaths Daily",
                 "{code}:Deaths 7-Day",
                 "{code}:Population",
             ],
