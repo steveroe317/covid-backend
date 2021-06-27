@@ -202,6 +202,22 @@ COUNTRIES = [
     'World:Zimbabwe',
 ]
 
+CANADA_PROVINCES = [
+    'World:Canada:Alberta',
+    'World:Canada:British Columbia',
+    'World:Canada:Manitoba',
+    'World:Canada:New Brunswick',
+    'World:Canada:Newfoundland and Labrador',
+    'World:Canada:Northwest Territories',
+    'World:Canada:Nova Scotia',
+    'World:Canada:Nunavut',
+    'World:Canada:Ontario',
+    'World:Canada:Prince Edward Island',
+    'World:Canada:Quebec',
+    'World:Canada:Saskatchewan',
+    'World:Canada:Yukon',
+]
+
 US_STATES = [
     'World:US:AK',
     'World:US:AL',
@@ -423,7 +439,7 @@ def main():
     from us_state_locations import us_states_to_state_names
 
     admin_codes = list(itertools.chain(
-        WORLD, COUNTRIES, US_STATES, US_CA_COUNTIES, US_WA_COUNTIES))
+        WORLD, COUNTRIES, CANADA_PROVINCES, US_STATES, US_CA_COUNTIES, US_WA_COUNTIES))
 
     print(FILE_HEADER_TEMPLATE)
 
