@@ -98,6 +98,7 @@ def write_firebase_entity(entity, verbose):
             elif re.match(r'\d{4}-\d{2}-\d{2}$', value):
                 value = datetime.datetime.fromisoformat(value)
             document_dict[header_row[index]].append(value)
+    document_dict['SortKeys'] = entity.sort_keys
     document_dict['Children'] = {}
     for child in entity.children:
         document_dict['Children'][child.name] = {}
