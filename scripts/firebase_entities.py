@@ -78,18 +78,6 @@ def build_firebase_entity_tree(firebase_outputs, tables, verbose):
     return root
 
 
-def write_firebase_output(firebase_output, tables, verbose):
-    if verbose:
-        print(firebase_output.table)
-    rows = tables[firebase_output.table]
-    WriteFirebaseDocument(firebase_output.document_path, rows)
-
-
-def write_firebase_outputs(firebase_outputs, tables, verbose):
-    for firebase_output in firebase_outputs:
-        write_firebase_output(firebase_output, tables, verbose)
-
-
 def write_firebase_entity(entity, verbose):
     document_path = '/'.join(entity.path)
     if verbose:
