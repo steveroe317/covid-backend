@@ -9,6 +9,8 @@ from collections import deque
 
 import json5
 
+from filters import (run_daily_filter, run_gap_fill_filter,
+                     run_rolling_average_filter)
 from firebase_entities import write_firebase_entities
 from johns_hopkins_journal import JohnsHopkinsJournal
 from johns_hopkins_query import (AdminArea, CsvOutput, FilteredQuery,
@@ -108,56 +110,6 @@ def run_region_queries(region_queries, regions, journal):
         query_results[query.name] = run_region_query(region, query.data_key,
                                                      journal)
     return query_results
-
-
-def run_daily_filter(source):
-    daily_result = {}
-    prev_value = 0
-    for source_key in sorted(source.keys()):
-        value = source[source_key]
-        if value and prev_value and value >= prev_value:
-            daily_result[source_key] = value - prev_value
-        else:
-            daily_result[source_key] = 0
-        prev_value = value
-    return daily_result
-
-
-def run_gap_fill_filter(source):
-    fill_result = {}
-    prev_value = 0
-    # Fill non-zero forward
-    for source_key in sorted(source.keys()):
-        value = source[source_key]
-        if value:
-            fill_result[source_key] = value
-            prev_value = value
-        else:
-            fill_result[source_key] = prev_value
-    # Fill non-zero backward
-    for source_key in reversed(sorted(source.keys())):
-        value = source[source_key]
-        if value:
-            fill_result[source_key] = value
-            prev_value = value
-        else:
-            fill_result[source_key] = prev_value
-    return fill_result
-
-
-def run_rolling_average_filter(source, window_size):
-    rolling_average = {}
-    rolling_sum = 0
-    rolling_samples = deque()
-    for source_key in sorted(source.keys()):
-        sample = source[source_key]
-        rolling_sum += sample
-        rolling_samples.appendleft(sample)
-        if len(rolling_samples) > window_size:
-            sample = rolling_samples.pop()
-            rolling_sum -= sample
-        rolling_average[source_key] = round(rolling_sum / len(rolling_samples))
-    return rolling_average
 
 
 def run_filtered_query(filter, source):
