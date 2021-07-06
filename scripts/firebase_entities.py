@@ -73,6 +73,18 @@ def build_firebase_entity_tree(firebase_outputs, tables, verbose):
                 metric_values = [rolling_average_filter(daily_filter(value))
                                  for value in source_tail]
                 entity.sort_keys[calculated_metric] = metric_values[-1]
+            if source_metric == 'Confirmed':
+                rise_metric = f'{source_metric} Rise %'
+                source_tail = table_column_tail(entity.table_rows,  index,
+                                                5 * 7)
+                daily_filter = make_daily_filter()
+                metric_values = [daily_filter(value) for value in source_tail]
+                if len(metric_values) > 4 * 7:
+                    new_sum = sum(metric_values[-2 * 7:])
+                    old_sum = sum(metric_values[-4 * 7: -2 * 7])
+                    rise_value = round(
+                        100 * new_sum / old_sum) if old_sum > 0 else 0
+                    entity.sort_keys[rise_metric] = rise_value
 
     # Add tree parent and child links based on document paths.
     for entity in entities.values():
