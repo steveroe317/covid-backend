@@ -88,3 +88,21 @@ def make_tagged_results_table(tags, queries, query_results):
             rows.append(data_row)
 
     return rows
+
+
+def table_column_tail(table, column_index, tail_size):
+    """Returns the last N integer values ot a table column as a list.
+
+    The column nust contain integer data.  The column name is not returned.
+    If there are not N values in the column, all values will be returned.
+
+    Args:
+        table: a query result table.
+        column_index: specifies the column to return.
+        tail_size: the number of entries to return.
+    """
+    tail_start = max(1, len(table) - tail_size)
+    tail = []
+    for row in range(tail_start, len(table)):
+        tail.append(int(table[row][column_index]))
+    return tail

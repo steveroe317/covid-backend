@@ -6,6 +6,9 @@ import re
 
 from firebase_client import WriteFirebaseDocument
 
+from filters import make_daily_filter, make_rolling_average_filter
+from results_tables import table_column_tail
+
 
 class FirebaseEntity:
 
@@ -54,7 +57,22 @@ def build_firebase_entity_tree(firebase_outputs, tables, verbose):
                 column_metric = column.split(':')[-1]
                 entity.sort_keys[column_metric] = int(last_column_value)
         if (verbose):
-            print('Added rows and sort keys', entity.name, entity.sort_keys)
+            print('Added rows and table sort keys', entity.name,
+                  entity.sort_keys)
+
+    # Add calculated sort keys.
+    for entity in entities.values():
+        for index, column in enumerate(entity.table_rows[0]):
+            source_metric = column.split(':')[-1]
+            if source_metric in ['Confirmed', 'Deaths']:
+                calculated_metric = f'{source_metric} 7-Day Calc'
+                source_tail = table_column_tail(entity.table_rows,  index,
+                                                2 * 7)
+                daily_filter = make_daily_filter()
+                rolling_average_filter = make_rolling_average_filter(7)
+                metric_values = [rolling_average_filter(daily_filter(value))
+                                 for value in source_tail]
+                entity.sort_keys[calculated_metric] = metric_values[-1]
 
     # Add tree parent and child links based on document paths.
     for entity in entities.values():
