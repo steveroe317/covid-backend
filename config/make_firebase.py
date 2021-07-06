@@ -657,10 +657,6 @@ QUERY_TEMPLATE = """
 """[1:-1]
 
 FILTERED_QUERY_TEMPLATE = """
-        {{ "name": "{code}:Confirmed Daily", "filter": "daily", "source": "{code}:Confirmed" }},
-        {{ "name": "{code}:Confirmed 7-Day", "filter": "7-day", "source": "{code}:Confirmed Daily" }},
-        {{ "name": "{code}:Deaths Daily",  "filter": "daily", "source": "{code}:Deaths" }},
-        {{ "name": "{code}:Deaths 7-Day", "filter": "7-day", "source": "{code}:Deaths Daily" }},
         {{ "name": "{code}:Population", "filter": "gap-fill", "source": "{code}:Population Raw" }},
 """[1:-1]
 
@@ -669,9 +665,7 @@ REPORT_TABLE_TEMPLATE = """
             "name": "{code}",
             "queries": [
                 "{code}:Confirmed",
-                "{code}:Confirmed 7-Day",
                 "{code}:Deaths",
-                "{code}:Deaths 7-Day",
                 "{code}:Population",
             ],
         }},

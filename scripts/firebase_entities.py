@@ -65,7 +65,7 @@ def build_firebase_entity_tree(firebase_outputs, tables, verbose):
         for index, column in enumerate(entity.table_rows[0]):
             source_metric = column.split(':')[-1]
             if source_metric in ['Confirmed', 'Deaths']:
-                calculated_metric = f'{source_metric} 7-Day Calc'
+                calculated_metric = f'{source_metric} 7-Day'
                 source_tail = table_column_tail(entity.table_rows,  index,
                                                 2 * 7)
                 daily_filter = make_daily_filter()
