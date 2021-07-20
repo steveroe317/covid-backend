@@ -74,7 +74,7 @@ def build_firebase_entity_tree(firebase_outputs, tables, verbose):
                                  for value in source_tail]
                 entity.sort_keys[calculated_metric] = metric_values[-1]
             if source_metric == 'Confirmed':
-                rise_metric = f'{source_metric} Rise %'
+                rise_metric = f'{source_metric} Rise'
                 source_tail = table_column_tail(entity.table_rows,  index,
                                                 5 * 7)
                 daily_filter = make_daily_filter()
