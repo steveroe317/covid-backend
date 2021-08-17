@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import datetime
+import math
 import numbers
 import re
 
@@ -60,29 +61,14 @@ def build_firebase_entity_tree(firebase_outputs, tables, verbose):
             print('Added rows and table sort keys', entity.name,
                   entity.sort_keys)
 
-    # Add calculated sort keys.
-    for entity in entities.values():
-        for index, column in enumerate(entity.table_rows[0]):
-            source_metric = column.split(':')[-1]
-            if source_metric in ['Confirmed', 'Deaths']:
-                calculated_metric = f'{source_metric} 7-Day'
-                source_tail = table_column_tail(entity.table_rows,  index,
-                                                2 * 7)
-                daily_filter = make_daily_filter()
-                rolling_average_filter = make_rolling_average_filter(7)
-                metric_values = [rolling_average_filter(daily_filter(value))
-                                 for value in source_tail]
-                entity.sort_keys[calculated_metric] = metric_values[-1]
-            if source_metric in ['Confirmed', 'Deaths']:
-                rise_metric = f'{source_metric} Rise'
-                AddRiseMetric(entity, index, rise_metric)
+    add_calculated_metrics(entities)
 
     # Add tree parent and child links based on document paths.
     for entity in entities.values():
         if entity.parent_path() in entities:
             entity.parent = entities[entity.parent_path()]
             entity.parent.children.add(entity)
-        if (verbose):
+        if (False and verbose):
             print('Added child parent links', entity.name,
                   entity.parent.name if entity.parent else 'root')
 
@@ -99,7 +85,35 @@ def build_firebase_entity_tree(firebase_outputs, tables, verbose):
     return root
 
 
-def AddRiseMetric(entity, index, rise_metric):
+def add_calculated_metrics(entities):
+    # Add calculated sort keys.
+    for entity in entities.values():
+        confirmed_rise = None
+        deaths_rise = None
+        for index, column in enumerate(entity.table_rows[0]):
+            source_metric = column.split(':')[-1]
+            if source_metric in ['Confirmed', 'Deaths']:
+                add_7_day_metric(entity, index, source_metric)
+            if source_metric == 'Confirmed':
+                add_spike_metric(entity, index, 'Spike')
+                confirmed_rise = rise_metric_value(entity, index)
+            if source_metric == 'Deaths':
+                deaths_rise = rise_metric_value(entity, index)
+        add_combined_rise_metric(entity, confirmed_rise, deaths_rise)
+
+
+def add_7_day_metric(entity, index, source_metric):
+    calculated_metric = f'{source_metric} 7-Day'
+    source_tail = table_column_tail(entity.table_rows,  index,
+                                    2 * 7)
+    daily_filter = make_daily_filter()
+    rolling_average_filter = make_rolling_average_filter(7)
+    metric_values = [rolling_average_filter(daily_filter(value))
+                     for value in source_tail]
+    entity.sort_keys[calculated_metric] = metric_values[-1]
+
+
+def rise_metric_value(entity, index):
     source_tail = table_column_tail(entity.table_rows,  index,
                                     5 * 7)
     daily_filter = make_daily_filter()
@@ -109,7 +123,90 @@ def AddRiseMetric(entity, index, rise_metric):
         old_sum = sum(metric_values[-4 * 7: -2 * 7])
         rise_value = round(
             100 * new_sum / old_sum) if old_sum > 0 else 0
-        entity.sort_keys[rise_metric] = rise_value
+        return rise_value
+    return 0
+
+
+def add_combined_rise_metric(entity, confirmed_rise, deaths_rise):
+    if confirmed_rise is not None and deaths_rise is not None:
+        combined_rise = 100 + (confirmed_rise - 100) + (deaths_rise - 100)
+    elif confirmed_rise is not None:
+        combined_rise = confirmed_rise
+    elif deaths_rise is not None:
+        combined_rise = deaths_rise
+    else:
+        combined_rise = 0
+    entity.sort_keys['Rise'] = combined_rise
+
+
+def add_spike_metric(entity, confirmed_index, rapid_rise_metric):
+    """Return CDC rapid rise metric.
+
+    This is modeled after the CDC county rapid riser metric:
+    - >100 new cases in last 7 days
+    - >0% change in 7-day incidence
+    - >-60% change in 3-day incidence
+    - 7-day incidence / 30-day incidence ratio >0.31
+    - one or both of the following triggering criteria:
+        (a) >60% change in 3-day incidence, (b) >60% change in 7-day incidence
+
+    The 30 day periods have been changed to 28 days to match the 7 day periods.
+    A sigmoid cutoff is used at the thresholds instead of a hard cutoff.
+
+    """
+    source_tail_length = 35
+    source_tail = table_column_tail(entity.table_rows,  confirmed_index,
+                                    source_tail_length)
+
+    daily_filter = make_daily_filter()
+    metric_values = [daily_filter(value) for value in source_tail]
+
+    activation_rise_value = 0
+    if len(metric_values) >= source_tail_length:
+        sum_28 = sum(metric_values[-28:])
+        sum_7 = sum(metric_values[-7:])
+        sum_prev_7 = sum(metric_values[-14:-7])
+        sum_3 = sum(metric_values[-3:])
+        sum_prev_3 = sum(metric_values[-6:-3])
+
+        spike_multiplier = 1
+        spike_multiplier *= activation_level(sum_7, 100)
+        spike_multiplier *= activation_level(sum_7, sum_prev_7)
+        spike_multiplier *= activation_level(sum_3, 0.4 * sum_prev_3)
+        spike_multiplier *= activation_level(
+            4 * sum_7, 0.31 * sum_28)
+
+        sum_3_min_rise_factor = activation_level(
+            sum_3, 1.6 * sum_prev_3)
+        sum_7_min_rise_factor = activation_level(
+            sum_7, 1.6 * sum_prev_7)
+        spike_multiplier *= activation_level_or(
+            sum_3_min_rise_factor, sum_7_min_rise_factor)
+
+        activation_rise_value = round(
+            spike_multiplier * 400 * sum_7 / sum_28) if (sum_28 != 0) else 0
+
+    entity.sort_keys[rapid_rise_metric] = activation_rise_value
+
+
+def logical_activation_level(value, threshold):
+    return 1 if value > threshold else 0
+
+
+def activation_level(value, threshold):
+    if value < 0:
+        raise ValueError('activation level value must be non-negative')
+    if threshold < 0:
+        raise ValueError('activation level threshold must be non-negative')
+    if value >= threshold:
+        return 1
+    scaled_value = 6 * (0.5 - value / threshold)
+    level = 1 / (1 + math.exp(scaled_value))
+    return level
+
+
+def activation_level_or(level_a, level_b):
+    return 1 - (1 - level_a) * (1 - level_b)
 
 
 def write_firebase_entity(entity, verbose):
