@@ -104,7 +104,7 @@ us_state_names_to_state = {
     'New York': 'NY',
     'North Carolina': 'NC',
     'North Dakota': 'ND',
-    'Northern Marina Islands': 'CP',
+    'Northern Mariana Islands': 'CP',
     'Ohio': 'OH',
     'Oklahoma': 'OK',
     'Oregon': 'OR',
