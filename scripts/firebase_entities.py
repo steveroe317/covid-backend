@@ -244,7 +244,7 @@ def write_firebase_entity(entity, verbose):
 def write_firebase_entity_tree(root, verbose):
     if not root:
         return
-    for node in root.children:
+    for node in sorted(root.children, key=lambda node: node.name):
         write_firebase_entity_tree(node, verbose)
     write_firebase_entity(root, verbose)
 
