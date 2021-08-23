@@ -4,6 +4,7 @@
         { "name": "Test:Brazil", "include": [ "Brazil" ] },
         { "name": "Test:India", "include": [ "India" ] },
         { "name": "Test:Israel", "include": [ "Israel" ] },
+        { "name": "Test:South Africa", "include": [ "South Africa" ] },
         { "name": "Test:United Kingdom", "include": [ "United Kingdom" ] },
         { "name": "Test:US", "include": [ "US" ] },
         { "name": "Test:US:CA", "include": [ "US:CA" ] },
@@ -26,6 +27,9 @@
         { "name": "Test:Israel:Confirmed", "key": "Confirmed", "region": "Test:Israel" },
         { "name": "Test:Israel:Deaths", "key": "Deaths", "region": "Test:Israel", },
         { "name": "Test:Israel:Population Raw", "key": "Population", "region": "Test:Israel", },
+        { "name": "Test:South Africa:Confirmed", "key": "Confirmed", "region": "Test:South Africa" },
+        { "name": "Test:South Africa:Deaths", "key": "Deaths", "region": "Test:South Africa", },
+        { "name": "Test:South Africa:Population Raw", "key": "Population", "region": "Test:South Africa", },
         { "name": "Test:United Kingdom:Confirmed", "key": "Confirmed", "region": "Test:United Kingdom" },
         { "name": "Test:United Kingdom:Deaths", "key": "Deaths", "region": "Test:United Kingdom", },
         { "name": "Test:United Kingdom:Population Raw", "key": "Population", "region": "Test:United Kingdom", },
@@ -56,6 +60,7 @@
         { "name": "Test:Brazil:Population", "filter": "gap-fill", "source": "Test:Brazil:Population Raw" },
         { "name": "Test:India:Population", "filter": "gap-fill", "source": "Test:India:Population Raw" },
         { "name": "Test:Israel:Population", "filter": "gap-fill", "source": "Test:Israel:Population Raw" },
+        { "name": "Test:South Africa:Population", "filter": "gap-fill", "source": "Test:South Africa:Population Raw" },
         { "name": "Test:United Kingdom:Population", "filter": "gap-fill", "source": "Test:United Kingdom:Population Raw" },
         { "name": "Test:US:Population", "filter": "gap-fill", "source": "Test:US:Population Raw" },
         { "name": "Test:US:CA:Population", "filter": "gap-fill", "source": "Test:US:CA:Population Raw" },
@@ -96,6 +101,14 @@
                 "Test:Israel:Confirmed",
                 "Test:Israel:Deaths",
                 "Test:Israel:Population",
+            ],
+        },
+        {
+            "name": "Test:South Africa",
+            "queries": [
+                "Test:South Africa:Confirmed",
+                "Test:South Africa:Deaths",
+                "Test:South Africa:Population",
             ],
         },
         {
@@ -179,6 +192,10 @@
         {
             "document_path": "time-series/Test/entities/Israel",
             "table": "Test:Israel"
+        },
+        {
+            "document_path": "time-series/Test/entities/South Africa",
+            "table": "Test:South Africa"
         },
         {
             "document_path": "time-series/Test/entities/United Kingdom",

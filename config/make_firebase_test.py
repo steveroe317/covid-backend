@@ -17,6 +17,7 @@ COUNTRIES = [
     'Test:Brazil',
     'Test:India',
     'Test:Israel',
+    'Test:South Africa',
     'Test:United Kingdom',
     'Test:US',
 ]
