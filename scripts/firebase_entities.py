@@ -261,5 +261,12 @@ def write_firebase_entities(firebase_outputs, tables, verbose):
     entity_tree = build_firebase_entity_tree(firebase_outputs, tables, verbose)
     write_firebase_entity_tree(entity_tree, verbose)
 
+    # TODO: Remove this timestamp after client app is migrated to root
+    # document timestamp.
     timestamp_path = '/'.join([entity_tree.path[0], 'Timestamp'])
+    write_firebase_timestamp(timestamp_path)
+
+    # Write timestamp doc for root collection and document.
+    timestamp_path = '/'.join([entity_tree.path[0],
+                               f'{entity_tree.path[1]}_Timestamp'])
     write_firebase_timestamp(timestamp_path)
