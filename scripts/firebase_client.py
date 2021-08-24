@@ -20,6 +20,31 @@ def WriteFirebaseDocument(document_path, document_dict):
     doc_ref.set(document_dict)
 
 
+class FirebaseBatchWriter:
+    DOCUMENT_WRITE_LIMIT = 200
+
+    def __init__(self):
+        self.documents = {}
+        self.cred = _Authorize()
+
+    def write(self, document_path, document_dict):
+        self.documents[document_path] = document_dict
+        if len(self.documents) >= FirebaseBatchWriter.DOCUMENT_WRITE_LIMIT:
+            self.flush()
+
+    def flush(self):
+        db = firestore.Client("covid-trends-1fafa", self.cred)
+        batch = db.batch()
+
+        for document_path in sorted(self.documents.keys()):
+            # 2 document access calls per document.
+            document_ref = db.document(document_path)
+            batch.set(document_ref, self.documents[document_path])
+
+        batch.commit()
+        self.documents = {}
+
+
 def main():
     cred = _Authorize()
     db = firestore.Client("covid-trends-1fafa", cred)

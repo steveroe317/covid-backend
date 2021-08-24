@@ -5,7 +5,7 @@ import math
 import numbers
 import re
 
-from firebase_client import WriteFirebaseDocument
+from firebase_client import FirebaseBatchWriter, WriteFirebaseDocument
 
 from filters import make_daily_filter, make_rolling_average_filter
 from results_tables import table_column_tail
@@ -209,7 +209,7 @@ def activation_level_or(level_a, level_b):
     return 1 - (1 - level_a) * (1 - level_b)
 
 
-def write_firebase_entity(entity, verbose):
+def write_firebase_entity(entity, batch_writer, verbose):
     document_path = '/'.join(entity.path)
     if verbose:
         print(document_path)
@@ -238,15 +238,15 @@ def write_firebase_entity(entity, verbose):
 
     if verbose:
         print(f'Writing ${entity.path}')
-    WriteFirebaseDocument(document_path, document_dict)
+    batch_writer.write(document_path, document_dict)
 
 
-def write_firebase_entity_tree(root, verbose):
+def write_firebase_entity_tree(root, batch_writer, verbose):
     if not root:
         return
     for node in sorted(root.children, key=lambda node: node.name):
-        write_firebase_entity_tree(node, verbose)
-    write_firebase_entity(root, verbose)
+        write_firebase_entity_tree(node, batch_writer, verbose)
+    write_firebase_entity(root, batch_writer, verbose)
 
 
 def write_firebase_timestamp(document_path):
@@ -259,7 +259,9 @@ def write_firebase_entities(firebase_outputs, tables, verbose):
     if verbose:
         print('Writing data to firebase')
     entity_tree = build_firebase_entity_tree(firebase_outputs, tables, verbose)
-    write_firebase_entity_tree(entity_tree, verbose)
+    batch_writer = FirebaseBatchWriter()
+    write_firebase_entity_tree(entity_tree, batch_writer, verbose)
+    batch_writer.flush()
 
     # TODO: Remove this timestamp after client app is migrated to root
     # document timestamp.
