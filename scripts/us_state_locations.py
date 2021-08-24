@@ -46,6 +46,7 @@ us_postal_codes = set([
     'OK',
     'OR',
     'PA',
+    'PR',
     'RI',
     'SC',
     'SD',
