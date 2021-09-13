@@ -1,0 +1,96 @@
+{
+    "regions": [
+        { "name": "world", "include": [ "" ] },
+        { "name": "us", "include": [ "US" ] },
+        { "name": "washington", "include": [ "US:WA" ] },
+        { "name": "king", "include": [ "US:WA:King" ] },
+    ],
+    "region_queries": [
+        { "name": "world:Confirmed", "key": "Confirmed", "region": "world" },
+        { "name": "world:Deaths", "key": "Deaths", "region": "world", },
+        { "name": "world:Population Raw", "key": "Population", "region": "world", },
+        { "name": "us:Confirmed", "key": "Confirmed", "region": "us" },
+        { "name": "us:Deaths", "key": "Deaths", "region": "us", },
+        { "name": "us:Population Raw", "key": "Population", "region": "us", },
+        { "name": "washington:Confirmed", "key": "Confirmed", "region": "washington" },
+        { "name": "washington:Deaths", "key": "Deaths", "region": "washington", },
+        { "name": "washington:Population Raw", "key": "Population", "region": "washington", },
+        { "name": "king:Confirmed", "key": "Confirmed", "region": "king" },
+        { "name": "king:Deaths", "key": "Deaths", "region": "king", },
+        { "name": "king:Population Raw", "key": "Population", "region": "king", },
+    ],
+    "filtered_queries": [
+        { "name": "world:Confirmed Daily", "filter": "daily", "source": "world:Confirmed" },
+        { "name": "world:Deaths Daily", "filter": "daily", "source": "world:Deaths" },
+        { "name": "world:Confirmed 7-Day", "filter": "7-day", "source": "world:Confirmed Daily" },
+        { "name": "world:Deaths 7-Day", "filter": "7-day", "source": "world:Deaths Daily" },
+        { "name": "world:Population", "filter": "gap-fill", "source": "world:Population Raw" },
+        { "name": "us:Confirmed Daily", "filter": "daily", "source": "us:Confirmed" },
+        { "name": "us:Deaths Daily", "filter": "daily", "source": "us:Deaths" },
+        { "name": "us:Confirmed 7-Day", "filter": "7-day", "source": "us:Confirmed Daily" },
+        { "name": "us:Deaths 7-Day", "filter": "7-day", "source": "us:Deaths Daily" },
+        { "name": "us:Population", "filter": "gap-fill", "source": "us:Population Raw" },
+        { "name": "washington:Confirmed Daily", "filter": "daily", "source": "washington:Confirmed" },
+        { "name": "washington:Deaths Daily", "filter": "daily", "source": "washington:Deaths" },
+        { "name": "washington:Confirmed 7-Day", "filter": "7-day", "source": "washington:Confirmed Daily" },
+        { "name": "washington:Deaths 7-Day", "filter": "7-day", "source": "washington:Deaths Daily" },
+        { "name": "washington:Population", "filter": "gap-fill", "source": "washington:Population Raw" },
+        { "name": "king:Confirmed Daily", "filter": "daily", "source": "king:Confirmed" },
+        { "name": "king:Deaths Daily", "filter": "daily", "source": "king:Deaths" },
+        { "name": "king:Confirmed 7-Day", "filter": "7-day", "source": "king:Confirmed Daily" },
+        { "name": "king:Deaths 7-Day", "filter": "7-day", "source": "king:Deaths Daily" },
+        { "name": "king:Population", "filter": "gap-fill", "source": "king:Population Raw" },
+    ],
+    "report_tables": [
+        {
+            "name": "world",
+            "queries": [
+                "world:Confirmed 7-Day",
+                "world:Deaths 7-Day",
+                "world:Population",
+            ],
+        },
+        {
+            "name": "us",
+            "queries": [
+                "us:Confirmed 7-Day",
+                "us:Deaths 7-Day",
+                "us:Population",
+            ],
+        },
+        {
+            "name": "washington",
+            "queries": [
+                "washington:Confirmed 7-Day",
+                "washington:Deaths 7-Day",
+                "washington:Population",
+            ],
+        },
+        {
+            "name": "king",
+            "queries": [
+                "king:Confirmed 7-Day",
+                "king:Deaths 7-Day",
+                "king:Population",
+            ],
+        },
+    ],
+    "csv_outputs": [
+        {
+            "filepath": "icon_graph_data/world.csv",
+            "table": "world"
+        },
+        {
+            "filepath": "icon_graph_data/us.csv",
+            "table": "us"
+        },
+        {
+            "filepath": "icon_graph_data/washington.csv",
+            "table": "washington"
+        },
+        {
+            "filepath": "icon_graph_data/king.csv",
+            "table": "king"
+        },
+    ],
+}
