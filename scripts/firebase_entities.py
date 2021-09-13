@@ -256,9 +256,11 @@ def write_firebase_timestamp(document_path):
 
 
 def write_firebase_entities(firebase_outputs, tables, verbose):
+    entity_tree = build_firebase_entity_tree(firebase_outputs, tables, verbose)
+    if not entity_tree:
+        return
     if verbose:
         print('Writing data to firebase')
-    entity_tree = build_firebase_entity_tree(firebase_outputs, tables, verbose)
     batch_writer = FirebaseBatchWriter()
     write_firebase_entity_tree(entity_tree, batch_writer, verbose)
     batch_writer.flush()
