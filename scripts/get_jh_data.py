@@ -6,4 +6,4 @@ JOHNS_HOPKINS_DATA_DIR = os.path.join('data', 'COVID-19')
 
 os.chdir(JOHNS_HOPKINS_DATA_DIR)
 
-os.system('git pull')
+os.system('git pull --strategy=recursive -Xtheirs --no-edit')
