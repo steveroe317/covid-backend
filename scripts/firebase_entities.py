@@ -237,7 +237,9 @@ def write_firebase_entity(entity, batch_writer, verbose):
         document_dict['Children'][child.name]['HasChildren'] = True if child.children else False
 
     if verbose:
-        print(f'Writing ${entity.path}')
+        dates = document_dict['Date']
+        print(
+            f'Writing last:{dates[-1]}, count:{len(dates)}, region: {entity.path}')
     batch_writer.write(document_path, document_dict)
 
 
