@@ -227,7 +227,12 @@ def write_firebase_entity(entity, batch_writer, verbose):
             if value.isnumeric():
                 value = int(value)
             elif re.match(r'\d{4}-\d{2}-\d{2}$', value):
-                value = datetime.datetime.fromisoformat(value)
+                # Increment filename date by 24 hours - 1 second and use UTC
+                # time zone.  This roughly matches the offset between the
+                # Johns Hopkins github file names data update times. See
+                # https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_daily_reports
+                value = datetime.datetime.fromisoformat(
+                    f'{value}T23:59:59+00:00')
             document_dict[header_row[index]].append(value)
     document_dict['SortKeys'] = entity.sort_keys
     document_dict['Children'] = {}
