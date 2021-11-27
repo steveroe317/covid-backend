@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import datetime
 import os
 import re
 from functools import reduce
@@ -19,10 +20,14 @@ class JohnsHopkinsJournal:
                 match = re.match(r'^(?P<MM>\d\d)-(?P<DD>\d\d)-(?P<YYYY>\d\d\d\d)\.csv$',
                                  name)
                 if match:
-                    date = '{YYYY}-{MM}-{DD}'.format(YYYY=match.group('YYYY'),
-                                                     MM=match.group('MM'),
-                                                     DD=match.group('DD'))
-                    date_files[date] = path
+                    # Increment timestamp from file name date by one day to
+                    # adjust for Johns Hopkins github data update schedule.
+                    file_name_date = datetime.datetime(int(match.group(
+                        'YYYY')), int(match.group('MM')), int(match.group('DD')))
+                    sample_date = file_name_date + \
+                        datetime.timedelta(days=1)
+                    sample_date_string = sample_date.strftime('%Y-%m-%d')
+                    date_files[sample_date_string] = path
         return date_files
 
     def _load_dailies(self, dir_path):

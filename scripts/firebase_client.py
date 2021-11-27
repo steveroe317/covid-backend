@@ -21,7 +21,7 @@ def WriteFirebaseDocument(document_path, document_dict):
 
 
 class FirebaseBatchWriter:
-    DOCUMENT_WRITE_LIMIT = 200
+    DOCUMENT_WRITE_LIMIT = 100
 
     def __init__(self):
         self.documents = {}
